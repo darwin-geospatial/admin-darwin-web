@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darwin Geospatial — Brand Colours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Core palette — verbatim from brandboard */
+    --ink:    #1B373F;
+    --forest: #426331;
+    --sage:   #879753;
+    --lime:   #BCBE76;
+    --cream:  #FCF5E3;
+    --line:   #E3DECB;
+    --muted:  #6B7560;
+    --font-display: 'Sora', sans-serif;
+    --font-body: 'Manrope', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.5;
+    padding: 3rem 1.5rem 5rem;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  header { margin-bottom: 3rem; }
+  .brandmark { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.02em; color: var(--forest); }
+  .subtitle { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 0.5rem; }
+  .note { color: var(--muted); font-size: 0.9rem; margin-top: 1rem; max-width: 60ch; }
+  h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; letter-spacing: 0.02em; margin: 3rem 0 0.35rem; }
+  h2 .tag { font-family: var(--font-mono); font-weight: 400; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; margin-left: 0.6rem; }
+  .section-note { color: var(--muted); font-size: 0.85rem; margin-bottom: 1.25rem; max-width: 60ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; }
+  .swatch { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; }
+  .chip { height: 120px; }
+  .meta { padding: 0.85rem 1rem 1rem; }
+  .name { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; }
+  .usage { color: var(--muted); font-size: 0.78rem; margin-top: 0.15rem; }
+  .codes { font-family: var(--font-mono); font-size: 0.78rem; margin-top: 0.6rem; display: flex; flex-direction: column; gap: 0.15rem; }
+  .codes span { color: var(--ink); }
+  .codes .rgb { color: var(--muted); }
+  footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.8rem; font-family: var(--font-mono); }
+  .type-row { display: flex; flex-wrap: wrap; gap: 2.5rem; margin-top: 1rem; }
+  .type-item .label { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+  .type-item .demo-display { font-family: var(--font-display); font-weight: 800; font-size: 1.8rem; }
+  .type-item .demo-body { font-family: var(--font-body); font-weight: 500; font-size: 1.4rem; }
+  .type-item .demo-mono { font-family: var(--font-mono); font-size: 1.3rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brandmark">Darwin Geospatial</div>
+    <div class="subtitle">Brand Colours &amp; Typography</div>
+    <p class="note">Faithful to the official brandboard. The 5 core colours are taken verbatim; neutrals and data-viz colours extend the system for real materials without replacing any brand colour.</p>
+  </header>
+
+  <h2>Core Palette <span class="tag">verbatim from brandboard</span></h2>
+  <div class="grid">
+    <div class="swatch"><div class="chip" style="background:#1B373F"></div><div class="meta"><div class="name">Darwin Ink</div><div class="usage">Anchor. Primary text, dark backgrounds, headlines</div><div class="codes"><span>#1B373F</span><span class="rgb">rgb(27, 55, 63)</span></div></div></div>
+    <div class="swatch"><div class="chip" style="background:#426331"></div><div class="meta"><div class="name">Darwin Forest</div><div class="usage">Primary brand green — buttons, CTAs, logo</div><div class="codes"><span>#426331</span><span class="rgb">rgb(66, 99, 49)</span></div></div></div>
+    <div class="swatch"><div class="chip" style="background:#879753"></div><div class="meta"><div class="name">Darwin Sage</div><div class="usage">Secondary — icons, accents, charts</div><div class="codes"><span>#879753</span><span class="rgb">rgb(135, 151, 83)</span></div></div></div>
+    <div class="swatch"><div class="chip" style="background:#BCBE76"></div><div class="meta"><div class="name">Darwin Lime</div><div class="usage">Highlight / accent, data emphasis on dark</div><div class="codes"><span>#BCBE76</span><span class="rgb">rgb(188, 190, 118)</span></div></div></div>
+    <div class="swatch"><div class="chip" style="background:#FCF5E3; border-bottom:1px solid var(--line)"></div><div class="meta"><div class="name">Darwin Cream</div><div class="usage">Primary light background</div><div class="codes"><span>#FCF5E3</span><span class="rgb">rgb(252, 245, 227)</span></div></div></div>
+  </div>
+
+  <h2>Extended Neutrals &amp; Semantic <span class="tag">not in brandboard</span></h2>
+  <p class="section-note">These do not replace any brand colour; they extend the system with roles the brandboard doesn't define.</p>
+  <div class="grid">
+    <div class="swatch"><div class="chip" style="background:#FFFFFF; border-bottom:1px solid var(--line)"></div><div class="meta"><div class="name">White</div><div class="usage">Backgrounds, text on dark</div><div class="codes"><span>#FFFFFF</span></div></div></div>
+    <div class="swatch"><div class="chip" style="background:#6B7560"></div><div class="meta"><div class="name">Muted</div><div class="usage">Secondary text, captions</div><div class="codes"><span>#6B7560</span></div></div></div>
+    <div class="swatch"><div class="chip" style="background:#E3DECB"></div><div class="meta"><div class="name">Line</div><div class="usage">Borders / dividers on cream</div><div class="codes"><span>#E3DECB</span></div></div></div>
+    <div class="swatch"><div class="chip" style="background:#A23B2D"></div><div class="meta"><div class="name">Risk / Fire</div><div class="usage">Alerts, wildfire, risk</div><div class="codes"><span>#A23B2D</span></div></div></div>
+  </div>
+
+  <h2>Data-viz Palette <span class="tag">functional — independent from brand</span></h2>
+  <p class="section-note">Kept separate so map / chart colours are read as data, not branding.</p>
+  <div class="grid">
+    <div class="swatch"><div class="chip" style="background:#2E7D32"></div><div class="meta"><div class="name">Vegetation / NDVI</div><div class="codes"><span>#2E7D32</span></div></div></div>
+    <div class="swatch"><div class="chip" style="background:#1565C0"></div><div class="meta"><div class="name">Water / Sky</div><div class="codes"><span>#1565C0</span></div></div></div>
+    <div class="swatch"><div class="chip" style="background:#C9A66B"></div><div class="meta"><div class="name">Bare soil / BSI</div><div class="codes"><span>#C9A66B</span></div></div></div>
+    <div class="swatch"><div class="chip" style="background:#A23B2D"></div><div class="meta"><div class="name">Burned area</div><div class="codes"><span>#A23B2D</span></div></div></div>
+  </div>
+
+  <h2>Typography <span class="tag">free / Google Fonts</span></h2>
+  <p class="section-note">Mirrors the brandboard's geometric-sans character using free, web-embeddable fonts (originals Codec Pro / TT Norms are paid).</p>
+  <div class="type-row">
+    <div class="type-item"><div class="label">Display — Sora 800</div><div class="demo-display">Space AI for nature</div></div>
+    <div class="type-item"><div class="label">Body — Manrope 500</div><div class="demo-body">Space AI for nature</div></div>
+    <div class="type-item"><div class="label">Mono — IBM Plex Mono</div><div class="demo-mono">Space AI for nature</div></div>
+  </div>
+
+  <footer>Source of truth: admin-darwin-marketing · context/brand/colors/BRAND_COLORS.md</footer>
+</div>
+</body>
+</html>

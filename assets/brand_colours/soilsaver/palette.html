@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoilSaveR — Brand Colours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --soil-dark:   #5D4037;
+    --soil-medium: #795548;
+    --soil-warm:   #8D6E63;
+    --soil-light:  #D7CCC8;
+    --soil-cream:  #EFEBE9;
+    --earth-green: #2E7D32;
+    --sky-blue:    #1565C0;
+    --font-display: 'Sora', sans-serif;
+    --font-body: 'Manrope', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-body);
+    background: var(--soil-cream);
+    color: var(--soil-dark);
+    line-height: 1.5;
+    padding: 3rem 1.5rem 5rem;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  header { margin-bottom: 3rem; }
+  .brandmark { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.02em; color: var(--soil-dark); }
+  .subtitle { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--soil-warm); margin-top: 0.5rem; }
+  .note { color: var(--soil-warm); font-size: 0.9rem; margin-top: 1rem; max-width: 60ch; }
+  h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; letter-spacing: 0.02em; margin: 3rem 0 0.35rem; }
+  h2 .tag { font-family: var(--font-mono); font-weight: 400; font-size: 0.7rem; color: var(--soil-warm); text-transform: uppercase; letter-spacing: 0.12em; margin-left: 0.6rem; }
+  .section-note { color: var(--soil-warm); font-size: 0.85rem; margin-bottom: 1.25rem; max-width: 60ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1rem; }
+  .swatch { border: 1px solid var(--soil-light); border-radius: 12px; overflow: hidden; background: #fff; }
+  .chip { height: 120px; }
+  .meta { padding: 0.85rem 1rem 1rem; }
+  .name { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; }
+  .usage { color: var(--soil-warm); font-size: 0.78rem; margin-top: 0.15rem; }
+  .codes { font-family: var(--font-mono); font-size: 0.78rem; margin-top: 0.6rem; }
+  footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--soil-light); color: var(--soil-warm); font-size: 0.8rem; font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brandmark">SoilSaveR</div>
+    <div class="subtitle">Brand Colours</div>
+    <p class="note">Project-specific palette, scoped to SoilSaveR only. Does not override the corporate Darwin Geospatial palette.</p>
+  </header>
+
+  <h2>Soil Palette</h2>
+  <div class="grid">
+    <div class="swatch"><div class="chip" style="background:#5D4037"></div><div class="meta"><div class="name">Soil Dark</div><div class="usage">Headers, dark backgrounds</div><div class="codes">#5D4037</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#795548"></div><div class="meta"><div class="name">Soil Medium</div><div class="usage">Cards, borders</div><div class="codes">#795548</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#8D6E63"></div><div class="meta"><div class="name">Soil Warm</div><div class="usage">Accents</div><div class="codes">#8D6E63</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#D7CCC8"></div><div class="meta"><div class="name">Soil Light</div><div class="usage">Light backgrounds</div><div class="codes">#D7CCC8</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#EFEBE9; border-bottom:1px solid var(--soil-light)"></div><div class="meta"><div class="name">Soil Cream</div><div class="usage">Page backgrounds</div><div class="codes">#EFEBE9</div></div></div>
+  </div>
+
+  <h2>Indicators <span class="tag">functional</span></h2>
+  <p class="section-note">Data indicators, read as data rather than branding.</p>
+  <div class="grid">
+    <div class="swatch"><div class="chip" style="background:#2E7D32"></div><div class="meta"><div class="name">Earth Green</div><div class="usage">NDVI / vegetation indicators</div><div class="codes">#2E7D32</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#1565C0"></div><div class="meta"><div class="name">Sky Blue</div><div class="usage">Water / BSI indicators</div><div class="codes">#1565C0</div></div></div>
+  </div>
+
+  <footer>Source of truth: admin-darwin-marketing · context/brand/colors/BRAND_COLORS.md (SoilSaveR section)</footer>
+</div>
+</body>
+</html>
