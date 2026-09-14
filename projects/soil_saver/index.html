@@ -24,10 +24,10 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts: Lora (display serif) + Space Mono (monospace accent) + Inter (body) -->
+  <!-- Fonts: Lora (display serif) + Inter (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
   <!-- GSAP + ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -61,7 +61,7 @@
 
     /* ── Typography ─────────────────────────────────────── */
     .font-display      { font-family: 'Lora', Georgia, serif; }
-    .font-mono-accent  { font-family: 'Space Mono', 'Courier New', monospace; }
+    .font-mono-accent  { font-family: 'Lora', Georgia, serif; }
 
     /* ── Scroll-reveal ───────────────────────────────────── */
     .animate-on-scroll {
@@ -176,7 +176,7 @@
     }
 
     .hero-title-saver {
-      font-family: 'Space Mono', monospace;
+      font-family: 'Lora', Georgia, serif;
       font-weight: 700;
       font-size: clamp(2rem, 7.5vw, 6.5rem);
       line-height: 1.1;
@@ -206,7 +206,7 @@
     }
 
     .hero-tag {
-      font-family: 'Space Mono', monospace;
+      font-family: 'Lora', Georgia, serif;
       font-size: 0.7rem;
       letter-spacing: 0.1em;
       padding: 0.3rem 0.8rem;
@@ -257,7 +257,7 @@
     }
 
     .stat-label {
-      font-family: 'Space Mono', monospace;
+      font-family: 'Lora', Georgia, serif;
       font-size: 0.7rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -280,7 +280,7 @@
     .why-matters-stat .stat-source {
       display: block;
       margin-top: 0.5rem;
-      font-family: 'Space Mono', monospace;
+      font-family: 'Lora', Georgia, serif;
       font-size: 0.6rem;
       letter-spacing: 0.05em;
     }
@@ -355,7 +355,7 @@
     /* Labels */
     .story-label {
       position: absolute;
-      font-family: 'Space Mono', monospace;
+      font-family: 'Lora', Georgia, serif;
       font-size: clamp(0.65rem, 1.2vw, 0.8rem);
       font-weight: 700;
       letter-spacing: 0.2em;
@@ -437,7 +437,7 @@
       bottom: 6.5rem;
       left: 50%;
       transform: translateX(-50%);
-      font-family: 'Space Mono', monospace;
+      font-family: 'Lora', Georgia, serif;
       font-size: 0.7rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -514,6 +514,14 @@
     .rg-bio { font-family: 'Inter', sans-serif; font-size: 0.8rem; line-height: 1.55; color: var(--soil-mid); margin-top: 0.55rem; }
     .rg-link { color: var(--soil-mid); transition: color .2s; margin-top: 0.6rem; }
     .rg-link:hover { color: var(--soil-warm); }
+
+    /* Latest updates — minimal NASA card */
+    .nasa-mini { display: flex; align-items: center; gap: 1.1rem; background: var(--soil-cream); border: 1px solid rgba(139, 94, 60, 0.22); border-radius: 0.75rem; padding: 0.9rem 1.1rem; transition: border-color .3s, transform .3s, box-shadow .3s; }
+    .nasa-mini:hover { border-color: var(--soil-warm); transform: translateY(-3px); box-shadow: 0 12px 30px rgba(31, 16, 7, 0.12); }
+    .nasa-thumb { position: relative; flex-shrink: 0; width: 8.5rem; height: 5rem; border-radius: 0.5rem; overflow: hidden; background-size: cover; background-position: center; }
+    .nasa-thumb::before { content: ''; position: absolute; inset: 0; background: rgba(31, 16, 7, 0.38); }
+    .nasa-thumb svg { position: absolute; inset: 0; margin: auto; width: 2rem; height: 2rem; color: var(--soil-cream); z-index: 2; transition: transform .3s, color .3s; }
+    .nasa-mini:hover .nasa-thumb svg { transform: scale(1.1); color: var(--soil-warm); }
 
     /* SoilSaveR mark in header */
     #header .ss-mark { height: 1.75rem; width: auto; }
@@ -786,17 +794,17 @@
           <rect x="0" y="0" width="200" height="68" rx="5" fill="rgba(15,8,2,0.75)"/>
           <!-- 1956 -->
           <line x1="10" y1="15" x2="28" y2="15" stroke="rgba(220,50,40,0.8)" stroke-width="2"/>
-          <text x="34" y="18" fill="rgba(232,213,163,0.9)" font-family="'Space Mono',monospace" font-size="9" letter-spacing="0.08em" data-lang="es">EROSIÓN 1956</text>
-          <text x="34" y="18" fill="rgba(232,213,163,0.9)" font-family="'Space Mono',monospace" font-size="9" letter-spacing="0.08em" class="hidden" data-lang="en">EROSION 1956</text>
+          <text x="34" y="18" fill="rgba(232,213,163,0.9)" font-family="'Lora',Georgia,serif" font-size="9" letter-spacing="0.08em" data-lang="es">EROSIÓN 1956</text>
+          <text x="34" y="18" fill="rgba(232,213,163,0.9)" font-family="'Lora',Georgia,serif" font-size="9" letter-spacing="0.08em" class="hidden" data-lang="en">EROSION 1956</text>
           <!-- 2025 -->
           <line x1="10" y1="32" x2="28" y2="32" stroke="rgba(220,50,40,0.8)" stroke-width="3"/>
-          <text x="34" y="35" fill="rgba(232,213,163,0.9)" font-family="'Space Mono',monospace" font-size="9" letter-spacing="0.08em" data-lang="es">EROSIÓN 2025</text>
-          <text x="34" y="35" fill="rgba(232,213,163,0.9)" font-family="'Space Mono',monospace" font-size="9" letter-spacing="0.08em" class="hidden" data-lang="en">EROSION 2025</text>
+          <text x="34" y="35" fill="rgba(232,213,163,0.9)" font-family="'Lora',Georgia,serif" font-size="9" letter-spacing="0.08em" data-lang="es">EROSIÓN 2025</text>
+          <text x="34" y="35" fill="rgba(232,213,163,0.9)" font-family="'Lora',Georgia,serif" font-size="9" letter-spacing="0.08em" class="hidden" data-lang="en">EROSION 2025</text>
           <!-- Future -->
           <line x1="10" y1="49" x2="28" y2="49" stroke="rgba(220,50,40,0.5)" stroke-width="2" stroke-dasharray="4 3"/>
           <rect x="10" y="53" width="18" height="8" fill="url(#hatch-legend)" stroke="none"/>
-          <text x="34" y="57" fill="rgba(232,213,163,0.6)" font-family="'Space Mono',monospace" font-size="8" letter-spacing="0.06em" data-lang="es">PROYECCIÓN 2030</text>
-          <text x="34" y="57" fill="rgba(232,213,163,0.6)" font-family="'Space Mono',monospace" font-size="8" letter-spacing="0.06em" class="hidden" data-lang="en">PROJECTION 2030</text>
+          <text x="34" y="57" fill="rgba(232,213,163,0.6)" font-family="'Lora',Georgia,serif" font-size="8" letter-spacing="0.06em" data-lang="es">PROYECCIÓN 2030</text>
+          <text x="34" y="57" fill="rgba(232,213,163,0.6)" font-family="'Lora',Georgia,serif" font-size="8" letter-spacing="0.06em" class="hidden" data-lang="en">PROJECTION 2030</text>
           <defs>
             <pattern id="hatch-legend" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
               <line x1="0" y1="0" x2="0" y2="4" stroke="rgba(220,50,40,0.4)" stroke-width="1"/>
@@ -1051,6 +1059,29 @@
           </div>
 
         </div>
+      </div>
+    </section>
+
+    <!-- ── LATEST UPDATES (NASA) ──────────────────────────── -->
+    <section id="latest-updates" style="background: var(--soil-light); padding: 4rem 1.5rem;">
+      <div class="container mx-auto" style="max-width: 40rem;">
+        <div class="animate-on-scroll text-center mb-6">
+          <span class="section-eyebrow" data-lang="es">Últimas novedades</span>
+          <span class="section-eyebrow hidden" data-lang="en">Latest updates</span>
+        </div>
+        <a href="https://nasa-space-to-soil.org/finalists/darwinslabs" target="_blank" rel="noopener" class="nasa-mini animate-on-scroll" aria-label="View our NASA Space to Soil finalist page">
+          <div class="nasa-thumb" style="background-image:url('./assets/pexels-dimengliu-3064079.jpg');">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <div class="min-w-0">
+            <h3 class="font-display" style="font-size:1.15rem; font-weight:700; color:var(--soil-dark);" data-lang="es">2º Premio · NASA Space to Soil Challenge</h3>
+            <h3 class="font-display hidden" style="font-size:1.15rem; font-weight:700; color:var(--soil-dark);" data-lang="en">2nd Award · NASA Space to Soil Challenge</h3>
+            <div style="margin-top:0.4rem;">
+              <span class="font-mono-accent" style="font-size:0.72rem; color:var(--soil-warm);" data-lang="es">Ver en la web oficial de la NASA →</span>
+              <span class="font-mono-accent hidden" style="font-size:0.72rem; color:var(--soil-warm);" data-lang="en">View on the official NASA page →</span>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
 
