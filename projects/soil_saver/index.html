@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soil SaveR — Darwin Geospatial</title>
+  <title>SoilSaveR Research Group — Darwin Geospatial</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Soil SaveR: the first public, multi-region, multi-modal labeled dataset for soil erosion detection from satellite imagery. Combining RUSLE modeling with Sentinel-2 visual verification."/>
-  <meta name="keywords" content="soil erosion detection, satellite imagery, RUSLE, Sentinel-2, deep learning, dataset, remote sensing, gully erosion, Darwin Geospatial, Soil SaveR"/>
+  <meta name="description" content="SoilSaveR: the first public, multi-region, multi-modal labeled dataset for soil erosion detection from satellite imagery. Combining RUSLE modeling with Sentinel-2 visual verification."/>
+  <meta name="keywords" content="soil erosion detection, satellite imagery, RUSLE, Sentinel-2, deep learning, dataset, remote sensing, gully erosion, Darwin Geospatial, SoilSaveR"/>
   <link rel="canonical" href="https://darwingeospatial.com/projects/soil_saver/"/>
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Soil SaveR — Public Erosion Detection Dataset | Darwin Geospatial"/>
+  <meta property="og:title" content="SoilSaveR Research Group — Public Erosion Detection Dataset | Darwin Geospatial"/>
   <meta property="og:description" content="The first public, multi-region labeled dataset for soil erosion detection from satellite imagery. RUSLE + Sentinel-2 hybrid methodology."/>
   <meta property="og:url" content="https://darwingeospatial.com/projects/soil_saver/"/>
   <meta property="og:site_name" content="Darwin Geospatial"/>
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Soil SaveR — Public Erosion Detection Dataset"/>
+  <meta name="twitter:title" content="SoilSaveR Research Group — Public Erosion Detection Dataset"/>
   <meta name="twitter:description" content="The first public, multi-region labeled dataset for soil erosion detection from satellite imagery."/>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -150,14 +150,14 @@
     }
 
     .hero-label {
-      font-family: 'Space Mono', monospace;
-      font-size: clamp(0.65rem, 1.2vw, 0.8rem);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--soil-warm);
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+      letter-spacing: 0.01em;
+      color: var(--soil-sand);
       display: block;
       margin-bottom: 1.25rem;
-      opacity: 0.9;
+      opacity: 0.92;
     }
 
     .hero-title-soil {
@@ -232,10 +232,14 @@
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
-      color: rgba(232, 213, 163, 0.5);
-      z-index: 1;
+      color: rgba(240, 222, 184, 0.85);
+      text-decoration: none;
+      cursor: pointer;
+      z-index: 2;
       animation: nudgeDown 2.5s ease-in-out infinite;
+      transition: color .25s;
     }
+    .hero-scroll:hover { color: var(--soil-warm); }
 
     @keyframes nudgeDown {
       0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -490,6 +494,30 @@
     /* Partner logos */
     .partner-logo { filter: grayscale(100%); opacity: .7; transition: all .3s ease; }
     .partner-logo:hover { filter: grayscale(0%); opacity: 1; }
+
+    /* ── RESEARCH GROUP ─────────────────────────────────── */
+    .rg-card {
+      display: flex; gap: 1rem;
+      background: var(--soil-cream); border: 1px solid rgba(139, 94, 60, 0.22);
+      border-radius: 0.75rem; padding: 1.1rem 1.2rem;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
+    }
+    .rg-card:hover { border-color: var(--soil-warm); transform: translateY(-3px); box-shadow: 0 10px 26px rgba(31, 16, 7, 0.10); }
+    .rg-avatar {
+      width: 3.75rem; height: 3.75rem; border-radius: 9999px;
+      object-fit: cover; object-position: center; flex-shrink: 0; align-self: flex-start;
+      border: 2px solid rgba(196, 134, 45, 0.45);
+    }
+    .rg-name { font-family: 'Lora', Georgia, serif; font-weight: 700; font-size: 1rem; color: var(--soil-dark); line-height: 1.15; }
+    .rg-role { font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.005em; color: var(--soil-mid); margin-top: 0.15rem; }
+    .rg-role.lead { color: var(--soil-warm); font-weight: 600; }
+    .rg-bio { font-family: 'Inter', sans-serif; font-size: 0.8rem; line-height: 1.55; color: var(--soil-mid); margin-top: 0.55rem; }
+    .rg-link { color: var(--soil-mid); transition: color .2s; margin-top: 0.6rem; }
+    .rg-link:hover { color: var(--soil-warm); }
+
+    /* SoilSaveR mark in header */
+    #header .ss-mark { height: 1.75rem; width: auto; }
+    #header .ss-divider { width: 1px; height: 2.5rem; background: rgba(139, 94, 60, 0.3); }
   </style>
   <script src="../../analytics.js"></script>
 </head>
@@ -498,11 +526,22 @@
 
   <!-- ── HEADER ─────────────────────────────────────────── -->
   <header id="header" class="fixed top-0 left-0 right-0 z-50 shadow-sm transition-all duration-300">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+    <div class="w-full px-6 lg:px-8 py-3 flex justify-between items-center">
 
-      <a href="../../index.html#home" class="flex-shrink-0">
-        <img src="../../assets/brand/logo_darwin.png" alt="Darwin Geospatial" class="h-10 md:h-12 w-auto">
-      </a>
+      <div class="flex items-center gap-3 sm:gap-5 flex-shrink-0">
+        <!-- SoilSaveR is the subject: horizontal lockup, first and big -->
+        <a href="#hero" aria-label="SoilSaveR Research Group">
+          <img src="../../assets/brand/soilsaver/soilsaver_horizontal_trans.png" alt="SoilSaveR Research Group" class="h-11 md:h-14 w-auto">
+        </a>
+        <span class="ss-divider hidden sm:block"></span>
+        <!-- Darwin + URJC, set apart -->
+        <a href="../../index.html#home" aria-label="Darwin Geospatial" class="hidden sm:block opacity-90 hover:opacity-100 transition-opacity">
+          <img src="../../assets/brand/logo_darwin.png" alt="Darwin Geospatial" class="h-7 md:h-9 w-auto">
+        </a>
+        <a href="https://www.urjc.es/" target="_blank" rel="noopener" aria-label="Universidad Rey Juan Carlos" class="hidden sm:block opacity-90 hover:opacity-100 transition-opacity">
+          <img src="../../assets/partners/transparent/urjc.png" alt="Universidad Rey Juan Carlos" class="h-[2.4rem] md:h-[3.05rem] w-auto">
+        </a>
+      </div>
 
       <nav class="hidden md:flex space-x-8 items-center text-sm font-medium" style="color: var(--soil-mid);">
         <a href="#hero"        data-lang="es">Inicio</a>
@@ -513,6 +552,8 @@
         <a href="#scrollytelling-wrapper" class="hidden" data-lang="en">Explore</a>
         <a href="#methodology"       data-lang="es">Metodología</a>
         <a href="#methodology" class="hidden" data-lang="en">Methodology</a>
+        <a href="#research-group"     data-lang="es">Grupo de Investigación</a>
+        <a href="#research-group" class="hidden" data-lang="en">Research Group</a>
         <a href="#soil-contact"       data-lang="es">Contacto</a>
         <a href="#soil-contact" class="hidden" data-lang="en">Contact</a>
       </nav>
@@ -540,6 +581,8 @@
       <a href="#scrollytelling-wrapper"  class="block py-2 hidden" data-lang="en">Explore</a>
       <a href="#methodology"             class="block py-2" data-lang="es">Metodología</a>
       <a href="#methodology"             class="block py-2 hidden" data-lang="en">Methodology</a>
+      <a href="#research-group"          class="block py-2" data-lang="es">Grupo de Investigación</a>
+      <a href="#research-group"          class="block py-2 hidden" data-lang="en">Research Group</a>
       <a href="#soil-contact"            class="block py-2" data-lang="es">Contacto</a>
       <a href="#soil-contact"            class="block py-2 hidden" data-lang="en">Contact</a>
     </div>
@@ -551,8 +594,7 @@
     <section id="hero">
       <div id="hero-content">
         <div class="animate-on-scroll" style="transition-delay:0.1s;">
-          <span class="hero-title-soil">SOIL</span>
-          <span class="hero-title-saver">SaveR</span>
+          <img src="../../assets/brand/soilsaver/soilsaver_horizontal_cream.png" alt="SoilSaveR" style="width:min(540px,84vw); height:auto; display:block;">
         </div>
         <p class="hero-tagline animate-on-scroll" style="transition-delay:0.25s;" data-lang="es">
           La erosión es visible desde el espacio.<br>Los datos para estudiarla, aún no.
@@ -561,18 +603,16 @@
           Erosion is visible from space.<br>The data to study it, not yet.
         </p>
 
-        <div class="hero-tags animate-on-scroll" style="transition-delay:0.4s;">
-        </div>
       </div>
 
       <!-- Scroll cue -->
-      <div class="hero-scroll">
-        <span class="font-mono-accent" style="font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase;" data-lang="es">Desplaza</span>
-        <span class="font-mono-accent hidden" style="font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase;" data-lang="en">Scroll</span>
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <a href="#why-it-matters" class="hero-scroll" aria-label="Scroll to content">
+        <span class="font-mono-accent" style="font-size:0.72rem; letter-spacing:0.25em; text-transform:uppercase;" data-lang="es">Desplaza</span>
+        <span class="font-mono-accent hidden" style="font-size:0.72rem; letter-spacing:0.25em; text-transform:uppercase;" data-lang="en">Scroll</span>
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
         </svg>
-      </div>
+      </a>
     </section>
 
     <!-- ── WHY IT MATTERS ────────────────────────────────── -->
@@ -637,10 +677,10 @@
           </h2>
 
           <p class="text-lg leading-relaxed" style="color:var(--soil-mid); text-align:justify;" data-lang="es">
-            Los métodos de deep learning para detección de erosión han mostrado resultados prometedores, pero la ausencia de datos públicos dificulta comparar, reproducir o mejorar esos modelos: de 113 artículos revisados, solo 2 comparten datos accesibles, y ambos cubren una única región y un único sensor. <strong style="color:var(--soil-brown);">Soil SaveR</strong> es un intento de empezar a cerrar esa brecha, proponiendo una metodología para generar un <strong style="color:var(--soil-brown);">dataset etiquetado, público, multimodal y multi-región para detección de erosión desde imágenes satelitales</strong>. La metodología combina modelado determinista (RUSLE + índices topográficos del DEM) para acotar automáticamente las zonas candidatas, con verificación visual humana sobre imágenes Sentinel-2, buscando que las etiquetas estén a la vez físicamente fundamentadas y visualmente confirmadas.
+            Los métodos de deep learning para detección de erosión han mostrado resultados prometedores, pero la ausencia de datos públicos dificulta comparar, reproducir o mejorar esos modelos: de 113 artículos revisados, solo 2 comparten datos accesibles, y ambos cubren una única región y un único sensor. <strong style="color:var(--soil-brown);">SoilSaveR</strong> es un intento de empezar a cerrar esa brecha, proponiendo una metodología para generar un <strong style="color:var(--soil-brown);">dataset etiquetado, público, multimodal y multi-región para detección de erosión desde imágenes satelitales</strong>. La metodología combina modelado determinista (RUSLE + índices topográficos del DEM) para acotar automáticamente las zonas candidatas, con verificación visual humana sobre imágenes Sentinel-2, buscando que las etiquetas estén a la vez físicamente fundamentadas y visualmente confirmadas.
           </p>
           <p class="text-lg leading-relaxed hidden" style="color:var(--soil-mid); text-align:justify;" data-lang="en">
-            Deep learning methods for erosion detection have shown promising results, but the absence of public data makes it difficult to compare, reproduce or improve those models: of 113 papers reviewed, only 2 share accessible data, and both cover a single region and a single sensor. <strong style="color:var(--soil-brown);">Soil SaveR</strong> is an attempt to start closing that gap, proposing a methodology to generate a <strong style="color:var(--soil-brown);">labeled, public, multi-modal, multi-region dataset for erosion detection from satellite imagery</strong>. The methodology combines deterministic modeling (RUSLE + DEM-derived topographic indices) to automatically narrow candidate zones, with human visual verification on Sentinel-2 imagery, seeking labels that are both physically grounded and visually confirmed.
+            Deep learning methods for erosion detection have shown promising results, but the absence of public data makes it difficult to compare, reproduce or improve those models: of 113 papers reviewed, only 2 share accessible data, and both cover a single region and a single sensor. <strong style="color:var(--soil-brown);">SoilSaveR</strong> is an attempt to start closing that gap, proposing a methodology to generate a <strong style="color:var(--soil-brown);">labeled, public, multi-modal, multi-region dataset for erosion detection from satellite imagery</strong>. The methodology combines deterministic modeling (RUSLE + DEM-derived topographic indices) to automatically narrow candidate zones, with human visual verification on Sentinel-2 imagery, seeking labels that are both physically grounded and visually confirmed.
           </p>
         </div>
 
@@ -817,8 +857,8 @@
 
           <!-- The pipeline -->
           <div class="soil-card">
-            <h3 class="font-display text-xl font-bold mb-4" style="color:var(--soil-dark);" data-lang="es">El pipeline híbrido</h3>
-            <h3 class="font-display text-xl font-bold mb-4 hidden" style="color:var(--soil-dark);" data-lang="en">The hybrid pipeline</h3>
+            <h3 class="font-display text-xl font-bold mb-4" style="color:var(--soil-dark);" data-lang="es">Pipeline híbrido multimodal</h3>
+            <h3 class="font-display text-xl font-bold mb-4 hidden" style="color:var(--soil-dark);" data-lang="en">Multimodal Hybrid Pipeline</h3>
             <ul class="space-y-3 text-sm leading-relaxed" style="color:var(--soil-mid);">
               <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Modelado determinista (RUSLE + DEM)</strong> calcula susceptibilidad a la erosión y genera una máscara de zonas candidatas.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Deterministic modeling (RUSLE + DEM)</strong> computes erosion susceptibility and generates a candidate-zone mask.</li>
@@ -839,8 +879,8 @@
 
           <!-- Technology -->
           <div class="soil-card">
-            <h3 class="font-display text-xl font-bold mb-4" style="color:var(--soil-dark);" data-lang="es">Stack de datos y modelos</h3>
-            <h3 class="font-display text-xl font-bold mb-4 hidden" style="color:var(--soil-dark);" data-lang="en">Data & model stack</h3>
+            <h3 class="font-display text-xl font-bold mb-4" style="color:var(--soil-dark);" data-lang="es">Parte del stack de datos y modelos</h3>
+            <h3 class="font-display text-xl font-bold mb-4 hidden" style="color:var(--soil-dark);" data-lang="en">Some of the Data & model stack</h3>
             <ul class="space-y-3 text-sm leading-relaxed" style="color:var(--soil-mid);">
               <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Sentinel-2 (10 m óptico)</strong> — base de etiquetado visual e imagen multiespectral de alta resolución.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Sentinel-2 (10 m optical)</strong> — visual labeling base and high-resolution multispectral imagery.</li>
@@ -868,16 +908,149 @@
             <li style="margin-bottom:0.75rem;">Cada modelo de deep learning publicado para detección de erosión fue entrenado con <strong style="color:var(--soil-cream);">datos privados e irreproducibles</strong>.</li>
             <li style="margin-bottom:0.75rem;">El estándar dominante, RUSLE, predice susceptibilidad, no presencia real, y sus predicciones se desvían de mediciones en campo por factores de <strong style="color:var(--soil-cream);">0,04× a 8×</strong>; solo el 41% de los estudios validan sus resultados.</li>
             <li style="margin-bottom:0.75rem;">La detección por deep learning de cárcavas, erosión en masa y erosión laminar requiere etiquetas confirmadas visualmente, no predicciones deterministas.</li>
-            <li><strong style="color:var(--soil-cream);">Soil SaveR</strong> es la primera infraestructura de datos que hace posible entrenar y comparar modelos de segmentación de erosión de forma abierta y reproducible, combinando 10 fuentes de datos distintas.</li>
+            <li><strong style="color:var(--soil-cream);">SoilSaveR</strong> es la primera infraestructura de datos que hace posible entrenar y comparar modelos de segmentación de erosión de forma abierta y reproducible, combinando 10 fuentes de datos distintas.</li>
           </ul>
           <ul class="leading-relaxed hidden" style="color:var(--soil-sand); list-style:disc; padding-left:1.25rem; margin:0; text-align:left;" data-lang="en">
             <li style="margin-bottom:0.75rem;">Every published deep learning model for erosion detection was trained on <strong style="color:var(--soil-cream);">private, non-reproducible data</strong>.</li>
             <li style="margin-bottom:0.75rem;">The dominant standard, RUSLE, predicts susceptibility, not actual presence, and its predictions deviate from field measurements by factors of <strong style="color:var(--soil-cream);">0.04× to 8×</strong>; only 41% of studies validate against measured data.</li>
             <li style="margin-bottom:0.75rem;">Deep learning detection of gullies, mass wasting and sheet erosion requires visually confirmed labels, not deterministic predictions.</li>
-            <li><strong style="color:var(--soil-cream);">Soil SaveR</strong> is the first data infrastructure that makes it possible to train and compare erosion segmentation models openly and reproducibly, by combining 10 different data sources.</li>
+            <li><strong style="color:var(--soil-cream);">SoilSaveR</strong> is the first data infrastructure that makes it possible to train and compare erosion segmentation models openly and reproducibly, by combining 10 different data sources.</li>
           </ul>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ── RESEARCH GROUP ─────────────────────────────────── -->
+    <section id="research-group" style="background:var(--soil-light); padding:6rem 1.5rem;">
+      <div class="container mx-auto" style="max-width:64rem;">
+
+        <div class="animate-on-scroll text-center mb-4">
+          <span class="section-eyebrow" data-lang="es">El Grupo de Investigación</span>
+          <span class="section-eyebrow hidden" data-lang="en">The Research Group</span>
+          <h2 class="font-display mt-2" style="font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; color:var(--soil-dark);" data-lang="es">
+            Quién construye SoilSaveR
+          </h2>
+          <h2 class="font-display mt-2 hidden" style="font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; color:var(--soil-dark);" data-lang="en">
+            Who builds SoilSaveR
+          </h2>
+        </div>
+
+        <p class="animate-on-scroll text-base leading-relaxed mx-auto text-center" style="color:var(--soil-mid); max-width:44rem;" data-lang="es">
+          El <strong style="color:var(--soil-brown);">SoilSaveR Research Group</strong> nació para cerrar una brecha crítica: la ausencia de datos públicos para detectar erosión y degradación del suelo. Reunimos a investigadores de Darwin Geospatial, la Universidad Johns Hopkins y la Universidad Rey Juan Carlos para construir el primer dataset abierto, multimodal y multi-región.
+        </p>
+        <p class="animate-on-scroll text-base leading-relaxed mx-auto text-center hidden" style="color:var(--soil-mid); max-width:44rem;" data-lang="en">
+          The <strong style="color:var(--soil-brown);">SoilSaveR Research Group</strong> was established to close a critical gap: the absence of public data for detecting soil erosion and land degradation. We bring together researchers from Darwin Geospatial, Johns Hopkins University and Universidad Rey Juan Carlos to build the first open, multi-modal, multi-region dataset.
+        </p>
+
+        <!-- Members -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-12 animate-on-scroll">
+
+          <!-- Gabriel Ireland -->
+          <div class="rg-card">
+            <img class="rg-avatar" src="../../assets/team/gabriel.jpg" alt="Gabriel Ireland">
+            <div class="min-w-0">
+              <h3 class="rg-name">Gabriel Ireland</h3>
+              <p class="rg-role lead" data-lang="es">Líder Tecnológico</p>
+              <p class="rg-role lead hidden" data-lang="en">Technology Leader</p>
+              <p class="rg-bio" data-lang="es">CEO y fundador de Darwin Geospatial. Combina el liderazgo técnico en IA y datos con la dirección del negocio y el desarrollo de clientes, tras una trayectoria internacional en Silicon Valley en finanzas de cadena de suministro y recursos naturales.</p>
+              <p class="rg-bio hidden" data-lang="en">CEO and founder of Darwin Geospatial. He pairs technical leadership in AI and data with running the business and building the client base, following an international career in Silicon Valley across supply-chain finance and natural resources.</p>
+              <a href="https://www.linkedin.com/in/g25d34i/" target="_blank" rel="noopener" aria-label="LinkedIn" class="rg-link inline-flex"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.84v1.64h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14v6.28h-4v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9v-12z"/></svg></a>
+            </div>
+          </div>
+
+          <!-- Dr. Víctor M. Tenorio -->
+          <div class="rg-card">
+            <img class="rg-avatar" src="../../assets/team/victor_tenorio.webp" alt="Dr. Víctor M. Tenorio">
+            <div class="min-w-0">
+              <h3 class="rg-name">Dr. Víctor M. Tenorio</h3>
+              <p class="rg-role lead" data-lang="es">Líder de Investigación</p>
+              <p class="rg-role lead hidden" data-lang="en">Research Lead</p>
+              <p class="rg-bio" data-lang="es">Profesor Ayudante Doctor en la Universidad Rey Juan Carlos y líder de investigación del grupo. Su tesis «Processing and Learning over Irregular Domains» recibió el Premio a la Mejor Tesis Doctoral 2026 del capítulo IEEE Spain Signal Processing and Communications. Investiga procesamiento de señales sobre grafos y aprendizaje automático.</p>
+              <p class="rg-bio hidden" data-lang="en">Assistant Professor at Universidad Rey Juan Carlos and the group's research leader. His thesis «Processing and Learning over Irregular Domains» won the 2026 Best PhD Thesis Award from the IEEE Spain Signal Processing and Communications Joint Chapter. He researches graph signal processing and machine learning.</p>
+              <a href="https://www.linkedin.com/in/vmtenorio/" target="_blank" rel="noopener" aria-label="LinkedIn" class="rg-link inline-flex"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.84v1.64h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14v6.28h-4v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9v-12z"/></svg></a>
+            </div>
+          </div>
+
+          <!-- Mario García Peces -->
+          <div class="rg-card">
+            <img class="rg-avatar" src="../../assets/team/mario.jpg" alt="Mario García Peces">
+            <div class="min-w-0">
+              <h3 class="rg-name">Mario García Peces</h3>
+              <p class="rg-role" data-lang="es">Científico de Recursos Naturales</p>
+              <p class="rg-role hidden" data-lang="en">Natural Resources Scientist</p>
+              <p class="rg-bio" data-lang="es">Cofundador e ingeniero geoespacial de Darwin Geospatial. Especialista en SIG, teledetección, análisis espacial y cartografía, convierte los datos espaciales en mapas y herramientas para entender paisajes y sistemas naturales. Ha trabajado con el OAPN en el Parque Nacional de Sierra Nevada.</p>
+              <p class="rg-bio hidden" data-lang="en">Cofounder and geospatial engineer at Darwin Geospatial. A specialist in GIS, remote sensing, spatial analysis and cartography, he turns spatial data into maps and tools for understanding landscapes and natural systems. He has worked with Spain's OAPN in Sierra Nevada National Park.</p>
+              <a href="https://www.linkedin.com/in/mario-garc%C3%ADa-peces-4563a7209/" target="_blank" rel="noopener" aria-label="LinkedIn" class="rg-link inline-flex"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.84v1.64h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14v6.28h-4v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9v-12z"/></svg></a>
+            </div>
+          </div>
+
+          <!-- Irene Molero Cuenca -->
+          <div class="rg-card">
+            <img class="rg-avatar" src="../../assets/team/irene_molero.jpg" alt="Irene Molero Cuenca">
+            <div class="min-w-0">
+              <h3 class="rg-name">Irene Molero Cuenca</h3>
+              <p class="rg-role" data-lang="es">Investigadora Predoctoral</p>
+              <p class="rg-role hidden" data-lang="en">PhD Student Researcher</p>
+              <p class="rg-bio" data-lang="es">Científica de datos especializada en aprendizaje automático aplicado a datos ambientales. En su Doctorado Industrial en Darwin desarrolla los modelos de IA de SoilSaveR, construyendo el dataset abierto de erosión del suelo y validándolo con verdad de campo.</p>
+              <p class="rg-bio hidden" data-lang="en">Data scientist specialized in machine learning for environmental data. In her Industrial PhD at Darwin she develops SoilSaveR's AI models, building the open soil-erosion dataset and validating it with field ground truth.</p>
+              <a href="https://www.linkedin.com/in/irenemolerocuenca/" target="_blank" rel="noopener" aria-label="LinkedIn" class="rg-link inline-flex"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.84v1.64h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14v6.28h-4v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9v-12z"/></svg></a>
+            </div>
+          </div>
+
+          <!-- Sandupal Dutta -->
+          <div class="rg-card">
+            <img class="rg-avatar" src="../../assets/team/sandupal_dutta.webp" alt="Sandupal Dutta">
+            <div class="min-w-0">
+              <h3 class="rg-name">Sandupal Dutta</h3>
+              <p class="rg-role" data-lang="es">Investigador</p>
+              <p class="rg-role hidden" data-lang="en">Researcher</p>
+              <p class="rg-bio" data-lang="es">Investigador doctoral (Graduate Fellow) en la Universidad Johns Hopkins y ex oficial de la Armada de la India. Científico de datos ambientales especializado en meteorología, oceanografía, modelización numérica y aprendizaje automático. Formó parte del equipo SoilSentinel en el reto NASA Space-to-Soil.</p>
+              <p class="rg-bio hidden" data-lang="en">Doctoral researcher (Graduate Fellow) at Johns Hopkins University and a former Indian Navy officer. An environmental data scientist specialized in meteorology, oceanography, numerical modeling and machine learning. He was part of the SoilSentinel team for the NASA Space-to-Soil Challenge.</p>
+              <a href="https://www.linkedin.com/in/sandupal-d-552a30105/" target="_blank" rel="noopener" aria-label="LinkedIn" class="rg-link inline-flex"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.84v1.64h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14v6.28h-4v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9v-12z"/></svg></a>
+            </div>
+          </div>
+
+          <!-- Victoria Kraiselburd -->
+          <div class="rg-card">
+            <img class="rg-avatar" src="../../assets/team/victoria_kraiselburd.jpeg" alt="Victoria Kraiselburd">
+            <div class="min-w-0">
+              <h3 class="rg-name">Victoria Kraiselburd</h3>
+              <p class="rg-role" data-lang="es">Responsable de Comunicación</p>
+              <p class="rg-role hidden" data-lang="en">Communications Officer</p>
+              <p class="rg-bio" data-lang="es">Intérprete de conferencias y traductora inglés–español, especializada en cambio climático, educación y políticas de salud. Como responsable de comunicación del grupo, difunde la ciencia abierta de SoilSaveR y la conecta con la sociedad.</p>
+              <p class="rg-bio hidden" data-lang="en">English–Spanish conference interpreter and translator specialized in climate action, education and health policy. As the group's communications officer, she shares SoilSaveR's open science and connects it with society.</p>
+              <a href="https://www.linkedin.com/in/victoriakraiselburd/" target="_blank" rel="noopener" aria-label="LinkedIn" class="rg-link inline-flex"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.84v1.64h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14v6.28h-4v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9v-12z"/></svg></a>
+            </div>
+          </div>
+
+          <!-- Benjamin Zaitchik -->
+          <div class="rg-card">
+            <img class="rg-avatar" src="../../assets/team/benjamin_zaitchik.jpg" alt="Benjamin Zaitchik">
+            <div class="min-w-0">
+              <h3 class="rg-name">Benjamin Zaitchik</h3>
+              <p class="rg-role" data-lang="es">Investigador Principal Senior</p>
+              <p class="rg-role hidden" data-lang="en">Senior PI</p>
+              <p class="rg-bio" data-lang="es">Catedrático de Ciencias de la Tierra y Planetarias en la Universidad Johns Hopkins. Experto en hidrología, clima y teledetección, aporta al grupo el fundamento científico de los modelos ambientales y la validación de la detección de erosión.</p>
+              <p class="rg-bio hidden" data-lang="en">Professor of Earth & Planetary Sciences at Johns Hopkins University. An expert in hydrology, climate and remote sensing, he provides the scientific foundation behind the group's environmental models and the validation of erosion detection.</p>
+              <a href="https://www.linkedin.com/in/ben-zaitchik-09bb0b29a/" target="_blank" rel="noopener" aria-label="LinkedIn" class="rg-link inline-flex"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.84v1.64h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14v6.28h-4v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9v-12z"/></svg></a>
+            </div>
+          </div>
+
+          <!-- Javier Velázquez Saornil -->
+          <div class="rg-card">
+            <img class="rg-avatar" src="../../assets/team/javier_velazquez.webp" alt="Javier Velázquez Saornil">
+            <div class="min-w-0">
+              <h3 class="rg-name">Javier Velázquez Saornil</h3>
+              <p class="rg-role" data-lang="es">Investigador Principal Senior</p>
+              <p class="rg-role hidden" data-lang="en">Senior PI</p>
+              <p class="rg-bio" data-lang="es">Investigador Principal Senior en la Universidad Católica de Ávila, especialista en ecología del paisaje, cartografía ambiental y conservación del territorio. Aporta al grupo la perspectiva de análisis espacial, planificación ambiental y áreas protegidas.</p>
+              <p class="rg-bio hidden" data-lang="en">Senior PI at Universidad Católica de Ávila, specializing in landscape ecology, environmental cartography and land conservation. He brings spatial analysis, environmental planning and protected-area expertise to the group.</p>
+              <a href="https://www.linkedin.com/in/javier-vel%C3%A1zquez-saornil-864b9b18/" target="_blank" rel="noopener" aria-label="LinkedIn" class="rg-link inline-flex"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.84v1.64h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14v6.28h-4v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9v-12z"/></svg></a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -902,11 +1075,22 @@
   <!-- ── FOOTER ─────────────────────────────────────────── -->
   <footer id="footer" style="padding:3rem 1.5rem; text-align:center;">
     <div class="container mx-auto">
-      <a href="../../index.html">
-        <img src="../../assets/brand/logo_darwin.png" alt="Darwin Geospatial" class="h-8 mx-auto mb-4">
-      </a>
+      <img src="../../assets/brand/soilsaver/soilsaver_lockup_terracotta.svg" alt="SoilSaveR Research Group" class="h-24 md:h-28 mx-auto mb-5">
+      <div class="flex flex-col items-center gap-3 mb-5">
+        <span class="font-mono-accent" style="font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; opacity:0.65;" data-lang="es">un grupo de investigación de</span>
+        <span class="font-mono-accent hidden" style="font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; opacity:0.65;" data-lang="en">a research group by</span>
+        <div class="flex items-center justify-center gap-5">
+          <a href="../../index.html" aria-label="Darwin Geospatial" class="opacity-90 hover:opacity-100 transition-opacity">
+            <img src="../../assets/brand/logo_darwin.png" alt="Darwin Geospatial" class="h-8">
+          </a>
+          <span style="width:1px; height:1.75rem; background:rgba(232,213,163,0.25);"></span>
+          <a href="https://www.urjc.es/" target="_blank" rel="noopener" aria-label="Universidad Rey Juan Carlos" class="opacity-90 hover:opacity-100 transition-opacity">
+            <img src="../../assets/partners/transparent/urjc_white.png" alt="Universidad Rey Juan Carlos" class="h-11">
+          </a>
+        </div>
+      </div>
       <p class="font-mono-accent" style="font-size:0.7rem; letter-spacing:0.15em;">
-        © 2026 Darwin Geospatial Labs · Soil SaveR
+        © 2026 Darwin Geospatial Labs · SoilSaveR Research Group
       </p>
       <p style="font-size:0.7rem; margin-top:0.75rem;">
         <a href="../../privacy.html" style="color:inherit; text-decoration:underline;">Política de Privacidad</a>

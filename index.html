@@ -1126,6 +1126,22 @@
                 </div>
               </article>
 
+              <!-- SoilSaveR Research Group -->
+              <article id="soil-saver-card" class="h-panel group" onclick="triggerSoilTransition()">
+                <div class="h-panel-img ai" style="background-image:url('./projects/soil_saver/assets/pexels-dimengliu-3064079.jpg');"></div>
+                <div class="h-panel-grad"></div>
+                <div class="h-panel-scan"></div>
+                <div class="relative h-full flex flex-col justify-end p-7 lg:p-8">
+                  <span class="chip self-start mb-3" data-lang="es">Sostenibilidad (ESG)</span>
+                  <span class="chip self-start mb-3 hidden" data-lang="en">Sustainability (ESG)</span>
+                  <h3 class="font-display text-3xl lg:text-4xl uppercase tracking-wide text-cream mb-2">SoilSaveR Research Group</h3>
+                  <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md" data-lang="es">Plataforma para monitorear el carbono orgánico del suelo y rastrear 70 años de degradación a escala de parcela, en una experiencia de scrollytelling única.</p>
+                  <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md hidden" data-lang="en">Platform to monitor soil organic carbon and track 70 years of degradation at field scale, through a unique scrollytelling experience.</p>
+                  <span class="inline-flex items-center gap-1 font-semibold text-sm text-olive" data-lang="es">Explorar proyecto <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></span>
+                  <span class="inline-flex items-center gap-1 font-semibold text-sm text-olive hidden" data-lang="en">Explore project <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></span>
+                </div>
+              </article>
+
               <!-- Darwin Maps -->
               <article id="darwin-maps-card" class="h-panel group" onclick="triggerMapsTransition()">
                 <div class="h-panel-img ai" style="background-image:url('./projects/darwin_maps/assets/background_darwin_maps.webp'); background-position:center bottom;"></div>
@@ -1158,22 +1174,6 @@
                   <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md hidden" data-lang="en">Drone flight services for forest and environmental monitoring. Centimetre-resolution orthomosaics and 3D models, served layer by layer in their own geospatial viewer.</p>
                   <span class="inline-flex items-center gap-1 font-semibold text-sm text-olive" data-lang="es">Visitar Cedar Vista <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></span>
                   <span class="inline-flex items-center gap-1 font-semibold text-sm text-olive hidden" data-lang="en">Visit Cedar Vista <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></span>
-                </div>
-              </article>
-
-              <!-- Soil SaveR -->
-              <article id="soil-saver-card" class="h-panel group" onclick="triggerSoilTransition()">
-                <div class="h-panel-img ai" style="background-image:url('./projects/soil_saver/assets/pexels-dimengliu-3064079.jpg');"></div>
-                <div class="h-panel-grad"></div>
-                <div class="h-panel-scan"></div>
-                <div class="relative h-full flex flex-col justify-end p-7 lg:p-8">
-                  <span class="chip self-start mb-3" data-lang="es">Sostenibilidad (ESG)</span>
-                  <span class="chip self-start mb-3 hidden" data-lang="en">Sustainability (ESG)</span>
-                  <h3 class="font-display text-3xl lg:text-4xl uppercase tracking-wide text-cream mb-2">Soil SaveR</h3>
-                  <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md" data-lang="es">Plataforma para monitorear el carbono orgánico del suelo y rastrear 70 años de degradación a escala de parcela, en una experiencia de scrollytelling única.</p>
-                  <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md hidden" data-lang="en">Platform to monitor soil organic carbon and track 70 years of degradation at field scale, through a unique scrollytelling experience.</p>
-                  <span class="inline-flex items-center gap-1 font-semibold text-sm text-olive" data-lang="es">Explorar proyecto <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></span>
-                  <span class="inline-flex items-center gap-1 font-semibold text-sm text-olive hidden" data-lang="en">Explore project <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></span>
                 </div>
               </article>
 
@@ -1372,46 +1372,19 @@
 
         </div>
 
-        <!-- Research Collaborators -->
-        <div class="mt-16 mb-7 text-center animate-on-scroll">
-          <p class="eyebrow" data-lang="es">Colaboradores de investigación</p>
-          <p class="eyebrow hidden" data-lang="en">Research collaborators</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-          <!-- Víctor Manuel Tenorio Gómez -->
-          <div class="team-card animate-on-scroll p-5 flex flex-col">
-            <div class="flex items-center gap-3">
-              <img src="./assets/team/victor_tenorio.webp" alt="Foto de Víctor Manuel Tenorio Gómez" class="w-14 h-14 rounded-full object-cover object-center shrink-0">
-              <div class="min-w-0">
-                <h3 class="text-sm font-bold text-cream leading-tight">Dr. Víctor M. Tenorio Gómez, PhD</h3>
-                <p class="text-olive font-medium text-xs mt-0.5" data-lang="es">Investigador - IA y Procesamiento de Señales</p>
-                <p class="text-olive font-medium text-xs mt-0.5 hidden" data-lang="en">Researcher - AI &amp; Signal Processing</p>
-                <a href="mailto:victor.tenorio@urjc.es" aria-label="Email" class="inline-block mt-1 text-cream-dim hover:text-olive transition-colors">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                </a>
-              </div>
-            </div>
-            <p class="text-cream-dim text-xs sm:text-sm mt-3 leading-relaxed" data-lang="es">Doctor por la Universidad Rey Juan Carlos (URJC) en Tecnologías de la Información y las Comunicaciones. Su investigación se centra en el procesamiento de señales sobre grafos, redes neuronales en grafos y aprendizaje automático.</p>
-            <p class="text-cream-dim text-xs sm:text-sm mt-3 leading-relaxed hidden" data-lang="en">PhD in Information Technology and Communications from Universidad Rey Juan Carlos (URJC). His research focuses on graph signal processing, graph neural networks, and machine learning.</p>
-          </div>
-
-          <!-- Sandupal Dutta -->
-          <div class="team-card animate-on-scroll p-5 flex flex-col" style="transition-delay:100ms;">
-            <div class="flex items-center gap-3">
-              <img src="./assets/team/sandupal_dutta.webp" alt="Foto de Sandupal Dutta" class="w-14 h-14 rounded-full object-cover object-center shrink-0">
-              <div class="min-w-0">
-                <h3 class="text-sm font-bold text-cream leading-tight">Sandupal Dutta</h3>
-                <p class="text-olive font-medium text-xs mt-0.5" data-lang="es">Doctorando en Oceanografía Física y Teledetección</p>
-                <p class="text-olive font-medium text-xs mt-0.5 hidden" data-lang="en">PhD Student in Physical Oceanography &amp; Remote Sensing</p>
-                <a href="https://eps.jhu.edu/directory/sandupal-dutta/" target="_blank" rel="noopener" aria-label="JHU profile" class="inline-block mt-1 text-cream-dim hover:text-olive transition-colors">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 015.656 5.656l-3 3a4 4 0 01-5.656-5.656M10.172 13.828a4 4 0 01-5.656-5.656l3-3a4 4 0 015.656 5.656"/></svg>
-                </a>
-              </div>
-            </div>
-            <p class="text-cream-dim text-xs sm:text-sm mt-3 leading-relaxed" data-lang="es">Doctorando en Ciencias Terrestres y Planetarias en la Universidad Johns Hopkins. Investiga oceanografía física, teledetección y aprendizaje automático. Colabora con Darwin en el reto NASA Space to Soil.</p>
-            <p class="text-cream-dim text-xs sm:text-sm mt-3 leading-relaxed hidden" data-lang="en">PhD student in Earth and Planetary Sciences at Johns Hopkins University. Researches physical oceanography, remote sensing, and machine learning. Collaborates with Darwin on the NASA Space to Soil challenge.</p>
-          </div>
+        <!-- Open research CTA -->
+        <div class="mt-16 text-center animate-on-scroll">
+          <p class="eyebrow" data-lang="es">Investigación abierta</p>
+          <p class="eyebrow hidden" data-lang="en">Open research</p>
+          <p class="text-cream-dim text-sm sm:text-base mt-4 max-w-xl mx-auto leading-relaxed" data-lang="es">Nuestro grupo de investigación reúne a científicos y colaboradores en torno a la ciencia abierta y los datos reproducibles.</p>
+          <p class="text-cream-dim text-sm sm:text-base mt-4 max-w-xl mx-auto leading-relaxed hidden" data-lang="en">Our research group brings scientists and collaborators together around open science and reproducible data.</p>
+          <p class="text-cream text-sm sm:text-base font-semibold mt-5 max-w-xl mx-auto leading-relaxed" data-lang="es">Estamos abiertos a incorporar nuevos investigadores y colaboradores. ¡Únete a nosotros!</p>
+          <p class="text-cream text-sm sm:text-base font-semibold mt-5 max-w-xl mx-auto leading-relaxed hidden" data-lang="en">We're open to onboard new researchers and collaborators. Come join us!</p>
+          <a href="#contact" class="btn-accent inline-flex items-center gap-2 mt-6 px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide">
+            <span data-lang="es">¡Contáctanos!</span>
+            <span data-lang="en" class="hidden">Contact Us!</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
         </div>
 
         <!-- Scroll cue to Contact -->
