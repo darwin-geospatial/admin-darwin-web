@@ -45,7 +45,7 @@
   <script src="./analytics.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <!-- Only the RGB base is critical (it's what shows first). The AlphaEarth layer
        is a hover-only reveal, so it loads lazily and doesn't compete for bandwidth. -->
   <link rel="preload" href="./assets/hero/alps_rgb.webp" as="image" fetchpriority="high"/>
@@ -75,6 +75,7 @@
     @media (max-width: 640px){ html{ font-size: 15px; } }
 
     .font-display { font-family: 'Sora', sans-serif; font-weight: 800; }
+    .font-card-title { font-family: 'Bebas Neue', sans-serif; font-weight: 400; letter-spacing: 0.04em; }
     .font-mono { font-family: 'Space Mono', monospace; }
 
     /* Eyebrow label — editorial uppercase with a leading rule (no monospace) */
@@ -1118,7 +1119,7 @@
                 <div class="relative h-full flex flex-col justify-end p-7 lg:p-8">
                   <span class="chip self-start mb-3" data-lang="es">Inteligencia del Capital Natural</span>
                   <span class="chip self-start mb-3 hidden" data-lang="en">Natural Capital Intelligence</span>
-                  <h3 class="font-display text-3xl lg:text-4xl uppercase tracking-wide text-cream mb-2">Habitat Hub Visor</h3>
+                  <h3 class="font-card-title text-4xl lg:text-5xl text-cream mb-2">Habitat Hub Visor</h3>
                   <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md" data-lang="es">Visor interactivo para el monitoreo de hábitats y pastos en áreas protegidas. Índices de vegetación, clasificación, suelo, clima y detección de cambios, capa a capa.</p>
                   <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md hidden" data-lang="en">Interactive viewer for habitat and pasture monitoring across protected areas. Vegetation indices, classification, soil, climate and change detection, layer by layer.</p>
                   <span class="inline-flex items-center gap-1 font-semibold text-sm text-olive" data-lang="es">Abrir plataforma <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></span>
@@ -1135,7 +1136,7 @@
                   <img src="./assets/brand/soilsaver/soilsaver_horizontal_cream.png" alt="SoilSaveR" class="h-20 lg:h-24 w-auto mb-1 object-contain object-left">
                   <p class="font-display text-sm uppercase tracking-widest text-cream-dim mb-2">Research Group</p>
                   <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md" data-lang="es">Plataforma para monitorear el carbono orgánico del suelo y rastrear 70 años de degradación a escala de parcela, en una experiencia de scrollytelling única.</p>
-                  <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md hidden" data-lang="en">Platform to monitor soil organic carbon and track 70 years of degradation at field scale, through a unique scrollytelling experience.</p>
+                  <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md hidden" data-lang="en">Explore our Research Group through a unique scrollytelling experience.</p>
                   <span class="inline-flex items-center gap-1 font-semibold text-sm text-olive" data-lang="es">Explorar proyecto <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></span>
                   <span class="inline-flex items-center gap-1 font-semibold text-sm text-olive hidden" data-lang="en">Explore project <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></span>
                 </div>
@@ -1149,7 +1150,7 @@
                 <div class="relative h-full flex flex-col justify-end p-7 lg:p-8">
                   <span class="chip self-start mb-3" data-lang="es">IA Agéntica</span>
                   <span class="chip self-start mb-3 hidden" data-lang="en">Agentic AI</span>
-                  <h3 class="font-display text-3xl lg:text-4xl uppercase tracking-wide text-cream mb-2">Darwin Maps</h3>
+                  <h3 class="font-card-title text-4xl lg:text-5xl text-cream mb-2">Darwin Maps</h3>
                   <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md" data-lang="es">Visor geoespacial con IA para el análisis del territorio. Capas ambientales, análisis por provincias y un asistente Geo AI que interpreta el paisaje por ti.</p>
                   <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md hidden" data-lang="en">AI-powered geospatial viewer for land analysis. Environmental layers, province-level analysis and a Geo AI assistant that interprets the landscape for you.</p>
                   <span class="inline-flex items-center gap-1 font-semibold text-sm text-olive" data-lang="es">Explorar mapa <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></span>
@@ -1168,7 +1169,7 @@
                 <div class="relative h-full flex flex-col justify-end p-7 lg:p-8">
                   <span class="chip self-start mb-3" data-lang="es">Inteligencia del Capital Natural</span>
                   <span class="chip self-start mb-3 hidden" data-lang="en">Natural Capital Intelligence</span>
-                  <h3 class="font-display text-3xl lg:text-4xl uppercase tracking-wide text-cream mb-2">Cedar Vista</h3>
+                  <h3 class="font-card-title text-4xl lg:text-5xl text-cream mb-2">Cedar Vista</h3>
                   <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md" data-lang="es">Servicios de vuelo con dron para monitoreo forestal y ambiental. Ortomosaicos y modelos 3D con resolución de centímetros, servidos capa a capa en su propio visor geoespacial.</p>
                   <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md hidden" data-lang="en">Drone flight services for forest and environmental monitoring. Centimetre-resolution orthomosaics and 3D models, served layer by layer in their own geospatial viewer.</p>
                   <span class="inline-flex items-center gap-1 font-semibold text-sm text-olive" data-lang="es">Visitar Cedar Vista <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></span>
@@ -1184,7 +1185,7 @@
                 <div class="relative h-full flex flex-col justify-end p-7 lg:p-8">
                   <span class="chip self-start mb-3" data-lang="es">Software para la Naturaleza</span>
                   <span class="chip self-start mb-3 hidden" data-lang="en">Software for Nature</span>
-                  <h3 class="font-display text-3xl lg:text-4xl uppercase tracking-wide text-cream mb-2">Darwin Oceans</h3>
+                  <h3 class="font-card-title text-4xl lg:text-5xl text-cream mb-2">Darwin Oceans</h3>
                   <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md" data-lang="es">Plataforma interactiva para datos oceánicos: temperatura superficial del mar, clorofila, corrientes y más capas ambientales marinas.</p>
                   <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md hidden" data-lang="en">Interactive platform for ocean data: sea surface temperature, chlorophyll, currents and more marine environmental layers.</p>
                   <span class="inline-flex items-center gap-1 font-semibold text-sm text-olive" data-lang="es">Abrir plataforma <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></span>
@@ -1200,7 +1201,7 @@
                 <div class="relative h-full flex flex-col justify-end p-7 lg:p-8">
                   <span class="chip self-start mb-3" data-lang="es">Software para la Naturaleza</span>
                   <span class="chip self-start mb-3 hidden" data-lang="en">Software for Nature</span>
-                  <h3 class="font-display text-3xl lg:text-4xl uppercase tracking-wide text-cream mb-2">Urban Nature Solutions</h3>
+                  <h3 class="font-card-title text-4xl lg:text-5xl text-cream mb-2">Urban Nature Solutions</h3>
                   <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md" data-lang="es">Soluciones basadas en la naturaleza para ciudades resilientes: simulación CFD de viento, islas de calor, infraestructura verde y conectividad ecológica.</p>
                   <p class="text-sm leading-relaxed text-cream-dim mb-4 max-w-md hidden" data-lang="en">Nature-based solutions for resilient cities: CFD wind simulation, heat islands, green infrastructure and ecological connectivity.</p>
                   <span class="inline-flex items-center gap-1 font-semibold text-sm text-olive" data-lang="es">Agenda una llamada <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span></span>
