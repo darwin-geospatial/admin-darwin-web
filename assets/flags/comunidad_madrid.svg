@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500">
+  <defs>
+    <polygon id="s" fill="#fff" transform="scale(42)" points="0,-1 .2245,-.309 .951,-.309 .363,.118 .588,.809 0,.382 -.588,.809 -.363,.118 -.951,-.309 -.2245,-.309"/>
+  </defs>
+  <path fill="#C8102E" d="M0 0h750v500H0z"/>
+  <use href="#s" x="225" y="190"/><use href="#s" x="325" y="190"/><use href="#s" x="425" y="190"/><use href="#s" x="525" y="190"/>
+  <use href="#s" x="275" y="310"/><use href="#s" x="375" y="310"/><use href="#s" x="475" y="310"/>
+</svg>

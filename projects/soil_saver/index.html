@@ -508,6 +508,8 @@
       object-fit: cover; object-position: center; flex-shrink: 0; align-self: flex-start;
       border: 2px solid rgba(196, 134, 45, 0.45);
     }
+    .rg-side { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; flex-shrink: 0; align-self: flex-start; width: 3.75rem; }
+    .rg-uni { width: 100%; max-height: 2.4rem; object-fit: contain; }
     .rg-name { font-family: 'Lora', Georgia, serif; font-weight: 700; font-size: 1rem; color: var(--soil-dark); line-height: 1.15; }
     .rg-role { font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.005em; color: var(--soil-mid); margin-top: 0.15rem; }
     .rg-role.lead { color: var(--soil-warm); font-weight: 600; }
@@ -522,6 +524,12 @@
     .nasa-thumb::before { content: ''; position: absolute; inset: 0; background: rgba(31, 16, 7, 0.38); }
     .nasa-thumb svg { position: absolute; inset: 0; margin: auto; width: 2rem; height: 2rem; color: var(--soil-cream); z-index: 2; transition: transform .3s, color .3s; }
     .nasa-mini:hover .nasa-thumb svg { transform: scale(1.1); color: var(--soil-warm); }
+    .nasa-thumb.logo-thumb { background-color: #fff; border: 1px solid rgba(139, 94, 60, 0.15); display: flex; align-items: center; justify-content: center; }
+    .nasa-thumb.logo-thumb::before { display: none; }
+    .nasa-thumb.logo-thumb img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform .3s; }
+    .nasa-thumb.logo-thumb img.flag { width: 100%; height: 100%; object-fit: cover; }
+    .nasa-thumb.logo-thumb img.logo { padding: 0.5rem; }
+    .nasa-mini:hover .nasa-thumb.logo-thumb img { transform: scale(1.05); }
 
     /* SoilSaveR mark in header */
     #header .ss-mark { height: 1.75rem; width: auto; }
@@ -956,7 +964,10 @@
 
           <!-- Gabriel Ireland -->
           <div class="rg-card">
-            <img class="rg-avatar" src="../../assets/team/gabriel.jpg" alt="Gabriel Ireland">
+            <div class="rg-side">
+              <img class="rg-avatar" src="../../assets/team/gabriel.jpg" alt="Gabriel Ireland">
+              <img class="rg-uni" src="../../assets/brand/logo_circle.png" alt="Darwin Geospatial" title="Darwin Geospatial">
+            </div>
             <div class="min-w-0">
               <h3 class="rg-name">Gabriel Ireland</h3>
               <p class="rg-role lead" data-lang="es">Líder Tecnológico</p>
@@ -969,7 +980,10 @@
 
           <!-- Dr. Víctor M. Tenorio -->
           <div class="rg-card">
-            <img class="rg-avatar" src="../../assets/team/victor_tenorio.webp" alt="Dr. Víctor M. Tenorio">
+            <div class="rg-side">
+              <img class="rg-avatar" src="../../assets/team/victor_tenorio.webp" alt="Dr. Víctor M. Tenorio">
+              <img class="rg-uni" src="../../assets/partners/transparent/urjc.png" alt="Universidad Rey Juan Carlos" title="Universidad Rey Juan Carlos">
+            </div>
             <div class="min-w-0">
               <h3 class="rg-name">Dr. Víctor M. Tenorio</h3>
               <p class="rg-role lead" data-lang="es">Líder de Investigación</p>
@@ -982,7 +996,10 @@
 
           <!-- Mario García Peces -->
           <div class="rg-card">
-            <img class="rg-avatar" src="../../assets/team/mario.jpg" alt="Mario García Peces">
+            <div class="rg-side">
+              <img class="rg-avatar" src="../../assets/team/mario.jpg" alt="Mario García Peces">
+              <img class="rg-uni" src="../../assets/brand/logo_circle.png" alt="Darwin Geospatial" title="Darwin Geospatial">
+            </div>
             <div class="min-w-0">
               <h3 class="rg-name">Mario García Peces</h3>
               <p class="rg-role" data-lang="es">Científico de Recursos Naturales</p>
@@ -995,7 +1012,11 @@
 
           <!-- Irene Molero Cuenca -->
           <div class="rg-card">
-            <img class="rg-avatar" src="../../assets/team/irene_molero.jpg" alt="Irene Molero Cuenca">
+            <div class="rg-side">
+              <img class="rg-avatar" src="../../assets/team/irene_molero.jpg" alt="Irene Molero Cuenca">
+              <img class="rg-uni" src="../../assets/brand/logo_circle.png" alt="Darwin Geospatial" title="Darwin Geospatial">
+              <img class="rg-uni" src="../../assets/partners/transparent/urjc.png" alt="Universidad Rey Juan Carlos" title="Universidad Rey Juan Carlos">
+            </div>
             <div class="min-w-0">
               <h3 class="rg-name">Irene Molero Cuenca</h3>
               <p class="rg-role" data-lang="es">Investigadora Predoctoral</p>
@@ -1008,7 +1029,10 @@
 
           <!-- Sandupal Dutta -->
           <div class="rg-card">
-            <img class="rg-avatar" src="../../assets/team/sandupal_dutta.webp" alt="Sandupal Dutta">
+            <div class="rg-side">
+              <img class="rg-avatar" src="../../assets/team/sandupal_dutta.webp" alt="Sandupal Dutta">
+              <img class="rg-uni" src="../../assets/partners/johns_hopkins.webp" alt="Johns Hopkins University" title="Johns Hopkins University">
+            </div>
             <div class="min-w-0">
               <h3 class="rg-name">Sandupal Dutta</h3>
               <p class="rg-role" data-lang="es">Investigador</p>
@@ -1021,7 +1045,10 @@
 
           <!-- Victoria Kraiselburd -->
           <div class="rg-card">
-            <img class="rg-avatar" src="../../assets/team/victoria_kraiselburd.jpeg" alt="Victoria Kraiselburd">
+            <div class="rg-side">
+              <img class="rg-avatar" src="../../assets/team/victoria_kraiselburd.jpeg" alt="Victoria Kraiselburd">
+              <img class="rg-uni" src="../../assets/brand/logo_circle.png" alt="Darwin Geospatial" title="Darwin Geospatial">
+            </div>
             <div class="min-w-0">
               <h3 class="rg-name">Victoria Kraiselburd</h3>
               <p class="rg-role" data-lang="es">Responsable de Comunicación</p>
@@ -1034,7 +1061,10 @@
 
           <!-- Benjamin Zaitchik -->
           <div class="rg-card">
-            <img class="rg-avatar" src="../../assets/team/benjamin_zaitchik.jpg" alt="Benjamin Zaitchik">
+            <div class="rg-side">
+              <img class="rg-avatar" src="../../assets/team/benjamin_zaitchik.jpg" alt="Benjamin Zaitchik">
+              <img class="rg-uni" src="../../assets/partners/johns_hopkins.webp" alt="Johns Hopkins University" title="Johns Hopkins University">
+            </div>
             <div class="min-w-0">
               <h3 class="rg-name">Benjamin Zaitchik</h3>
               <p class="rg-role" data-lang="es">Investigador Principal Senior</p>
@@ -1047,7 +1077,10 @@
 
           <!-- Javier Velázquez Saornil -->
           <div class="rg-card">
-            <img class="rg-avatar" src="../../assets/team/javier_velazquez.webp" alt="Javier Velázquez Saornil">
+            <div class="rg-side">
+              <img class="rg-avatar" src="../../assets/team/javier_velazquez.webp" alt="Javier Velázquez Saornil">
+              <img class="rg-uni" src="../../assets/partners/transparent/universidad_avila.png" alt="Universidad Católica de Ávila" title="Universidad Católica de Ávila">
+            </div>
             <div class="min-w-0">
               <h3 class="rg-name">Javier Velázquez Saornil</h3>
               <p class="rg-role" data-lang="es">Investigador Principal Senior</p>
@@ -1070,8 +1103,8 @@
           <span class="section-eyebrow hidden" data-lang="en">Latest updates</span>
         </div>
         <a href="https://sede.comunidad.madrid/ayudas-becas-subvenciones/ayudas-doctorados-industriales-5" target="_blank" rel="noopener" class="nasa-mini animate-on-scroll" style="margin-bottom:1rem;" aria-label="Comunidad de Madrid – Doctorados Industriales">
-          <div class="nasa-thumb" style="background-image:url('./assets/pexels-dimengliu-3064079.jpg');">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <div class="nasa-thumb logo-thumb">
+            <img class="flag" src="../../assets/flags/comunidad_madrid.svg" alt="Bandera de la Comunidad de Madrid">
           </div>
           <div class="min-w-0">
             <h3 class="font-display" style="font-size:1.1rem; font-weight:700; color:var(--soil-dark);" data-lang="es">1er Premio a Mejor Propuesta de Investigación · Doctorados Industriales, Comunidad de Madrid</h3>
@@ -1083,8 +1116,8 @@
           </div>
         </a>
         <a href="https://nasa-space-to-soil.org/finalists/darwinslabs" target="_blank" rel="noopener" class="nasa-mini animate-on-scroll" aria-label="View our NASA Space to Soil finalist page">
-          <div class="nasa-thumb" style="background-image:url('./assets/pexels-dimengliu-3064079.jpg');">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M10 8l6 4-6 4V8z" fill="currentColor" stroke="none"/></svg>
+          <div class="nasa-thumb logo-thumb">
+            <img class="logo" src="../../assets/partners/nasa_meatball.png" alt="NASA">
           </div>
           <div class="min-w-0">
             <h3 class="font-display" style="font-size:1.15rem; font-weight:700; color:var(--soil-dark);" data-lang="es">2º Premio · NASA Space to Soil Challenge</h3>
