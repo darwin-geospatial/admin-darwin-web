@@ -1,123 +1,8 @@
-# ARCHITECTURE.template.md
-
-> **How to use:** copy this file into a repo as `ARCHITECTURE.md`.
-> Delete the EXAMPLE block. Fill in the TEMPLATE block for that repo.
-> Sections 3, 4, 5 are optional -- skip entirely if not applicable to the repo.
-
----
-
-# ████ EXAMPLE — data-darwin-mlops-beagle ████
-# ████ DELETE THIS ENTIRE BLOCK BEFORE COMMITTING ████
-
-## 1. Repo Map
-
-**Purpose:** ML habitat classification pipeline. Trains and evaluates models (UNet, LightGBM, Prithvi)
-on multi-temporal satellite imagery to map vegetation habitats across European protected areas.
-Runs on GCP Cloud Build + Compute Engine VMs. The agent never guesses run state -- it reads
-`scripts/inspect_run.py` or GCS artifacts directly.
-
-**Structure:**
-
-| Path | Type | Purpose |
-|------|------|---------|
-| `.darwin/repo.json` | file | Identity manifest |
-| `AGENTS.md` | file | Agentic context -- read first every session |
-| `src/` | dir | Core pipeline code (s0 label sampling → s1 data prep → s4 analytics) |
-| `scripts/` | dir | Inspection + analysis entrypoints (`inspect_run.py`, `build_data_inventory.py`) |
-| `configs/` | dir | Per-campaign YAML + habitat mapping JSONs |
-| `cicd/` | dir | Cloud Build trigger configs |
-| `model/` | dir | Model definitions and training loops |
-| `campaigns/` | dir | Per-campaign AOI definitions and split manifests |
-
-**Entry points:**
-
-| Entry point | Triggered by | What it does |
-|-------------|-------------|--------------|
-| `1-cloudbuild-chip-generation-vm.yaml` | Cloud Build trigger | Generates image chips from raw rasters |
-| `2-cloudbuild-ml-unet-baseline-vm.yaml` | Cloud Build trigger | Trains UNet baseline model on VM |
-| `scripts/inspect_run.py` | manual | Ground-truth check for any run's metrics, split, config |
-
-**External dependencies:**
-
-| Dependency | Type | Declared in |
-|-----------|------|-------------|
-| `darwin-agent-center` | MCP | `CLAUDE.md` |
-| `gcloud` CLI | infra tool | `cicd/*.yaml`, `scripts/` |
-| `gsutil` | infra tool | `src/`, `scripts/` |
-
-## 2. Database Map
-
-**GCP resources:**
-
-| Resource | Type | Found in | Notes |
-|---------|------|---------|-------|
-| `gs://darwin-general-beagle/` | GCS bucket | `src/s1_data_preparation/build_prithvi_features.py:41` | Root bucket -- all data, experiments, models |
-| `gs://darwin-general-beagle/Laboratory/Data/BAP/` | GCS path | `src/s1_data_preparation/build_prithvi_datacube.py:88` | Best Available Pixel composites per campaign |
-| `gs://darwin-general-beagle/Laboratory/Experiments/prithvi/data/` | GCS path | `scripts/run_prithvi_features.py:17` | Prithvi feature tensors (read + write) |
-| `gs://darwin-general-beagle/Laboratory/Experiments/<MODEL_ID>/` | GCS path | `scripts/inspect_run.py:12` | Per-run artifacts: model_metadata.json, split_summary.json, logs |
-| `artifacts/split_summary.json` | GCS artifact | `scripts/inspect_run.py:55` | Realized train/val/holdout split per region -- ground truth for any split question |
-
-**Key artifact schemas:**
-
-| Resource | Field | Type | Notes |
-|---------|-------|------|-------|
-| `split_summary.json` | `regions[].name` | string | Campaign region identifier |
-| `split_summary.json` | `regions[].train_pct` | float | Realized % of pixels in train split |
-| `split_summary.json` | `regions[].val_pct` | float | Realized % of pixels in val split |
-| `model_metadata.json` | `model_id` | string | Unique run identifier |
-| `model_metadata.json` | `config_path` | string | GCS path to the config used for this run |
-| `data_quality/epoch_NNN.json` | `subgroup_metrics` | object | Per-region × per-habitat val metrics |
-
-## 4. Pipeline Map
-
-**Flow:**
-
-```
-gs://darwin-general-beagle/Laboratory/Data/BAP/   ← raw Best Available Pixel composites
-    │
-    │  src/s1_data_preparation/  (Cloud Build step 1, CPU VM)
-    ▼
-gs://darwin-general-beagle/Laboratory/Data/Chips/  ← normalised .pt chip tensors
-    │
-    ├──────────────────────────────────────────────────────────────┐
-    │  model/ + split manifest  (Cloud Build step 2, GPU VM)       │  model/ + prithvi tensors (Cloud Build step 2b, GPU VM)
-    ▼                                                               ▼
-gs://.../Experiments/<MODEL_ID>/model_weights/      gs://.../Experiments/<MODEL_ID>/prithvi_weights/
-    │                                                               │
-    └───────────────────────────┬──────────────────────────────────┘
-                                │  scripts/inspect_run.py  (manual, always run before any metric claim)
-                                ▼
-                    per-region × per-habitat metrics to stdout
-                    split_summary.json  ←  ground truth for train/val split
-```
-
-**Triggers and cadence:**
-
-| Pipeline | Trigger | Cadence |
-|---------|---------|---------|
-| Chip generation | Cloud Build | ad-hoc per campaign |
-| UNet / LightGBM training | Cloud Build | ad-hoc per experiment |
-| Prithvi fine-tuning | Cloud Build | ad-hoc per experiment |
-| Evaluation | manual (`inspect_run.py`) | after every training run |
-
-## 6. Staleness Log
-
-| Item | Status | Last checked | Notes |
-|------|--------|-------------|-------|
-| `gs://darwin-general-beagle/` | current | 2026-09-21 | Root bucket confirmed active |
-| `scripts/inspect_run.py` | current | 2026-09-21 | Primary ground-truth tool |
-| `campaigns/` | current | 2026-09-21 | |
-
-# ████ END OF EXAMPLE — DELETE ABOVE ████
-
----
----
-
-# ARCHITECTURE -- {repo-name}
+# ARCHITECTURE -- darwinlabsweb
 
 > Agentic context map. Read this before touching any file.
 > Never copy from another repo -- this file maps only what lives here.
-> Last reviewed: {YYYY-MM-DD} by @{who}
+> Last reviewed: 2026-09-26 by @gabrielireland
 
 ---
 
@@ -125,114 +10,104 @@ gs://.../Experiments/<MODEL_ID>/model_weights/      gs://.../Experiments/<MODEL_
 
 > DS-STD-001 · DS-STD-001-001 · DS-STD-001-002 · DS-STD-001-003
 > Every path listed here is checked by `kb_staleness_audit` on every push to main.
-> If a file or folder no longer exists, it gets flagged automatically.
 
-**Purpose:** {one paragraph}
+**Purpose:** Public website for Darwin Geospatial (darwingeospatial.com). Plain static HTML, no
+build step: Tailwind via CDN, bilingual ES (default) / EN through `data-lang` attributes toggled
+by `lang.js`. Whatever is on `main` is what gets served (hosting details and current status in
+`CLOUDFLARE.md`). Brand values are consumed from `admin-darwin-marketing`, never defined here.
 
 **Structure:**
 
 | Path | Type | Purpose |
 |------|------|---------|
-| `.darwin/repo.json` | file | Identity manifest |
-| `AGENTS.md` | file | Agentic context -- read first every session |
-| `{path/}` | dir | {what lives here} |
-| `{file}` | file | {what it does} |
+| `AGENTS.md` | file | Agentic context and brand-source rules -- read first every session |
+| `CLAUDE.md` | file | Canonical connectivity block (DS-STD-005-004) |
+| `ARCHITECTURE.md` | file | This map (DS-STD-001-005) |
+| `IDEAS.md` | file | Ideas backlog (DS-STD-001-004) |
+| `README.md` | file | One-line repo description |
+| `CLOUDFLARE.md` | file | Deployment guide: DNS, Cloudflare Pages vs GitHub Pages status |
+| `SEO.md` | file | SEO tag reference and how to add SEO to a new page |
+| `PENDING.md` | file | Website restructure proposal (working doc) |
+| `SOILSAVER_RESEARCH_GROUP.md` | file | Content brief for `projects/soil_saver/` |
+| `index.html` | file | Homepage: hero reveal, mission canvas, solutions, projects, team, contact form |
+| `services.html` | file | Services page, partner marquee |
+| `privacy.html` | file | Privacy policy |
+| `lang.js` | file | Language switching (ES/EN) + mission canvas animation |
+| `analytics.js` | file | GA4 loader + GDPR consent banner |
+| `CNAME` | file | Custom domain for GitHub Pages |
+| `.nojekyll` | file | Disables Jekyll processing on GitHub Pages |
+| `.gitattributes` | file | Forces LF line endings |
+| `.gitignore` | file | Git ignore rules |
+| `favicon.ico` | file | Root favicon |
+| `robots.txt` | file | Crawler rules |
+| `sitemap.xml` | file | Sitemap for search engines |
+| `llms.txt` | file | Site summary for LLM crawlers |
+| `openapi.json` | file | Machine-readable site/API description |
+| `solutions/` | dir | One landing page per audience or solution (ngo, research, companies, city, public administration, nature assessment, ai agents, software for nature) |
+| `projects/` | dir | Project case-study pages, one folder each with `index.html` + `assets/` |
+| `projects/darwin_crops_landuse/` | dir | Crops / land-use project page |
+| `projects/darwin_maps/` | dir | Darwin Maps project page |
+| `projects/darwin_oceans/` | dir | Darwin Oceans project page |
+| `projects/darwin_visor/` | dir | Darwin Visor project page (includes demo videos) |
+| `projects/guadarramaski/` | dir | Guadarrama Ski project page |
+| `projects/soil_saver/` | dir | SoilSaveR research group page (GSAP animations) |
+| `projects/cedar_vista/`, `projects/habitat_hub/`, `projects/urban_nature/` | dir | Asset-only folders; banners used as cards on homepage and `solutions/` pages |
+| `projects/team/` | dir | Individual team member portfolio pages |
+| `blog/` | dir | Blog index and articles |
+| `assets/brand/` | dir | Logos and favicons, mirrored from `admin-darwin-marketing` (see `AGENTS.md`) |
+| `assets/brand/soilsaver/` | dir | SoilSaveR logos, mirrored from `admin-darwin-marketing` |
+| `assets/hero/` | dir | Homepage hero slideshow and reveal images (webp + source png/jpg) |
+| `assets/hero/deprecated/` | dir | Retired hero images (see Open findings) |
+| `assets/partners/` | dir | Partner and client logos; `transparent/` holds background-removed variants |
+| `assets/team/` | dir | Team photos |
+| `assets/services/` | dir | Service card images for `services.html` |
+| `assets/flags/` | dir | Country / region flags used on project cards |
+| `scripts/` | dir | Local maintenance scripts (`README.md` documents them) |
+| `scripts/convert-hero-images.sh` | file | Converts hero PNGs to WebP |
+| `.claude/settings.local.json` | file | Local Claude Code settings (see Open findings) |
 
 **Entry points:**
 
 | Entry point | Triggered by | What it does |
 |-------------|-------------|--------------|
-| `{file.py}` | {cron / manual / event} | {description} |
+| `index.html` | browser | Homepage; loads `lang.js` and `analytics.js` |
+| `services.html`, `privacy.html`, `solutions/*.html`, `projects/*/index.html`, `blog/*.html` | browser | Standalone pages, each self-contained (inline styles + Tailwind CDN) |
+| `git push origin main` | human | Publishes the site (see `CLOUDFLARE.md` for which host is live) |
+| `scripts/convert-hero-images.sh` | manual | Regenerates hero WebP files |
 
 **External dependencies:**
 
 | Dependency | Type | Declared in |
 |-----------|------|-------------|
-| `{name}` | {MCP / API / package} | `{file}` |
+| `darwin-agent-center` | MCP | `CLAUDE.md` |
+| `admin-darwin-marketing` (`marketing/branding/`) | brand source repo | `AGENTS.md` |
+| Tailwind CSS (`cdn.tailwindcss.com`) | CDN script | every HTML page |
+| Google Fonts | CDN stylesheet | every HTML page |
+| GSAP + ScrollTrigger (`cdnjs.cloudflare.com`) | CDN script | `projects/soil_saver/index.html` |
+| Google Analytics 4 (`googletagmanager.com`) | analytics | `analytics.js` |
+| Formspree | form backend | `index.html` (contact form) |
+| `storage.googleapis.com/urban-tree-visor/` | embedded app | `solutions/city-solutions.html` |
+| `darwinmaps.web.app` | linked app | `projects/darwin_maps/`, homepage |
+| Cloudflare (DNS) / Cloudflare Pages / GitHub Pages | hosting | `CLOUDFLARE.md`, `CNAME` |
+
+Sections 2-5 skipped: no GCP resources owned by this repo (the GCS bucket above is only
+embedded, owned elsewhere), no agents, no pipelines, no knowledge graph.
 
 ---
 
-## 2. Database Map
+## Open findings
 
-> Scope: only GCP resources in THIS repo. Never include resources from other repos.
-> To find them: grep for `gs://`, `bigquery`, env vars with project IDs, dataset names.
-> GCS paths are flagged as `unverified` by the audit (no GitHub API access) -- verify manually with `gsutil ls`.
+Flagged for human review, not fixed:
 
-**GCP resources:**
-
-| Resource | Type | Found in | Notes |
-|---------|------|---------|-------|
-| `{gs://bucket/path or project/dataset/table}` | {GCS / BigQuery / Firestore / CloudSQL} | `{file}:{line}` | {what it stores or does} |
-
-**Key artifact schemas:**
-
-| Resource | Field | Type | Notes |
-|---------|-------|------|-------|
-| `{file or table}` | `{field_name}` | {string / int / float / object} | {what it means} |
-
----
-
-## 3. Agentic Workflow Map
-
-> DS-STD-003 · DS-STD-003-001 · DS-STD-003-002 · DS-STD-003-003-002
-> Skip this section entirely if the repo defines no agents.
-> Agent definition files listed here are checked by `kb_staleness_audit` -- if a `.claude/agents/name.md` disappears, it gets flagged.
-
-| Agent | Defined in | Tier | Trigger | Output |
-|-------|-----------|------|---------|--------|
-| `{agent-name}` | `{.claude/agents/name.md}` | {open/employee/admin} | {trigger} | {output} |
-
-| Step | Agent / script | Input | Output | On failure |
-|------|---------------|-------|--------|-----------|
-| 1. {step} | `{file}` | {input} | {output} | {skip/retry/alert} |
-
-| Agent | tools/ path | Key scripts |
-|-------|------------|-------------|
-| `{agent-name}` | `{agent-dir/tools/}` | `{script.py}` |
-
----
-
-## 4. Pipeline Map
-
-> DS-STD-003-003-001 · DS-STD-003-003-002
-> Skip this section entirely if the repo runs no data or ML pipelines.
-> Scripts listed in the flow are checked by `kb_staleness_audit` -- renamed or deleted scripts get flagged.
-
-**Flow:**
-
-```
-{data source: bucket path, table, or file}
-    │
-    │  {script or tool}  ({trigger: Cloud Build / cron / manual})
-    ▼
-{intermediate output: path or resource}
-    │
-    │  {next script}
-    ▼
-{final output: path, table, or report}
-```
-
-**Triggers and cadence:**
-
-| Pipeline | Trigger | Cadence |
-|---------|---------|---------|
-| `{pipeline name}` | {Cloud Build / cron / manual} | {daily / ad-hoc / on-push} |
-
----
-
-## 5. Knowledge Graph Map
-
-> DS-STD-001-002 · DS-STD-003-003-001
-> Skip this section entirely if the repo has no knowledge graph.
-
-| Node type | Defined in | Properties | Notes |
-|-----------|-----------|-----------|-------|
-| `{NodeType}` | `{file}` | `{fields}` | {description} |
-
-| Edge | From | To | Defined in | Notes |
-|------|------|----|-----------|-------|
-| `{edge}` | `{NodeType}` | `{NodeType}` | `{file}` | {meaning} |
-
-| Query | Used in | Purpose |
-|-------|---------|---------|
-| `{query}` | `{file}` | {purpose} |
+- `assets/hero/deprecated/` looks orphaned. `forest_rgb.jpg` and `forest_seg.jpg` exist both
+  there and in `assets/hero/`. Confirm nothing references the deprecated copies before removing.
+- `.darwin/repo.json` is missing (DS-STD-001-002).
+- `.claude/settings.local.json` is tracked by git; local settings are usually ignored.
+- `CLOUDFLARE.md` (June 2026) says Cloudflare Pages is disconnected and names the repo as
+  `darwin-geospatial/darwinlabsweb`, while `origin` points to `gabrielireland/darwinlabsweb`.
+  Confirm which host is live and update `CLOUDFLARE.md`.
+- `projects/cedar_vista/`, `habitat_hub/`, `urban_nature/` have assets but no `index.html`;
+  confirm whether pages are planned or the folders should move under `assets/`.
+- `projects/endworldhunger/assets/` exists locally but is empty (untracked).
+- No references to `assets/hero/deprecated/` found in any HTML/JS file.
+- No `status.md` / `workflow.md` at root, which `AGENTS.md` START HERE expects (DS-STD-003-003-002).
