@@ -23,7 +23,7 @@ by `lang.js`. Whatever is on `main` is what gets served (hosting details and cur
 | `AGENTS.md` | file | Agentic context and brand-source rules -- read first every session |
 | `CLAUDE.md` | file | Canonical connectivity block (DS-STD-005-004) |
 | `ARCHITECTURE.md` | file | This map (DS-STD-001-005) |
-| `IDEAS.md` | file | Ideas backlog (DS-STD-001-004) |
+| `planning/` | dir | Planning data (DS-STD-001-006): new ideas in `planning/ideas.md`, rows in `planning/data/items.csv` |
 | `README.md` | file | One-line repo description |
 | `CLOUDFLARE.md` | file | Deployment guide: DNS, Cloudflare Pages vs GitHub Pages status |
 | `SEO.md` | file | SEO tag reference and how to add SEO to a new page |
