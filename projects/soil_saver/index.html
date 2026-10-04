@@ -93,12 +93,12 @@
       flex-direction: column;
       justify-content: center;
       overflow: hidden;
-      background: var(--soil-dark);
+      background: var(--soil-light);
     }
 
     /* Layered soil-texture gradient */
     #hero::before {
-      content: '';
+      content: none;
       position: absolute;
       inset: 0;
       background:
@@ -119,7 +119,7 @@
 
     /* Subtle crosshatch / organic texture */
     #hero::after {
-      content: '';
+      content: none;
       position: absolute;
       inset: 0;
       background-image:
@@ -147,6 +147,7 @@
       max-width: 1200px;
       margin: 0 auto;
       width: 100%;
+      text-align: center;
     }
 
     .hero-label {
@@ -190,10 +191,11 @@
     .hero-tagline {
       font-family: 'Lora', serif;
       font-style: italic;
-      font-size: clamp(1rem, 2.2vw, 1.5rem);
-      color: var(--soil-sand);
-      margin-top: 1.75rem;
-      max-width: 600px;
+      font-size: clamp(1.25rem, 2.8vw, 1.9rem);
+      color: var(--soil-brown);
+      margin-top: 4.1rem;
+      max-width: 700px;
+      margin-inline: auto;
       opacity: 0.85;
       line-height: 1.5;
     }
@@ -232,7 +234,7 @@
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
-      color: rgba(240, 222, 184, 0.85);
+      color: var(--soil-mid);
       text-decoration: none;
       cursor: pointer;
       z-index: 2;
@@ -240,6 +242,24 @@
       transition: color .25s;
     }
     .hero-scroll:hover { color: var(--soil-warm); }
+
+    /* Scroll cue under "This is what erosion looks like from space" */
+    .fs-scroll {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      color: rgba(240, 222, 184, 0.85);
+      text-decoration: none;
+      animation: nudgeDownY 2.5s ease-in-out infinite;
+      transition: color .25s;
+    }
+    .fs-scroll:hover { color: var(--soil-warm); }
+    @keyframes nudgeDownY {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(6px); }
+    }
 
     @keyframes nudgeDown {
       0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -555,11 +575,13 @@
           <img src="../../assets/brand/logo_darwin.png" alt="Darwin Geospatial" class="h-7 md:h-9 w-auto">
         </a>
         <a href="https://www.urjc.es/" target="_blank" rel="noopener" aria-label="Universidad Rey Juan Carlos" class="hidden sm:block opacity-90 hover:opacity-100 transition-opacity">
-          <img src="../../assets/partners/transparent/urjc.png" alt="Universidad Rey Juan Carlos" class="h-[2.4rem] md:h-[3.05rem] w-auto">
+          <img src="../../assets/partners/transparent/urjc_simbolo.png" alt="Universidad Rey Juan Carlos" class="h-[1.58rem] md:h-[2.03rem] w-auto">
         </a>
+        <!-- ml-[5px] matches the transparent margin on the left of logo_darwin.png, so both partner logos sit centred between the two dividers -->
+        <span class="ss-divider hidden md:block ml-[5px]"></span>
       </div>
 
-      <nav class="hidden md:flex space-x-8 items-center text-sm font-medium" style="color: var(--soil-mid);">
+      <nav class="hidden md:flex gap-8 items-center text-sm font-medium" style="color: var(--soil-mid);">
         <a href="#hero"        data-lang="es">Inicio</a>
         <a href="#hero" class="hidden" data-lang="en">Home</a>
         <a href="#project-intro" data-lang="es">El Proyecto</a>
@@ -575,6 +597,8 @@
       </nav>
 
       <div class="flex items-center gap-3">
+        <!-- mirrors the divider after the URJC logo: 25px from the language switcher -->
+        <span class="ss-divider hidden md:block mr-[13px]"></span>
         <div class="lang-switcher text-sm" style="color: var(--soil-mid);">
           <button id="lang-es" class="active">ES</button>
           <span>/</span>
@@ -610,7 +634,7 @@
     <section id="hero">
       <div id="hero-content">
         <div class="animate-on-scroll" style="transition-delay:0.1s;">
-          <img src="../../assets/brand/soilsaver/soilsaver_horizontal_cream.png" alt="SoilSaveR" style="width:min(540px,84vw); height:auto; display:block;">
+          <img src="../../assets/brand/soilsaver/soilsaver_horizontal_trans.png" alt="SoilSaveR" style="width:min(621px,92vw); height:auto; display:block; margin-inline:auto;">
         </div>
         <p class="hero-tagline animate-on-scroll" style="transition-delay:0.25s;" data-lang="es">
           La erosión es visible desde el espacio.<br>Los datos para estudiarla, aún no.
@@ -651,25 +675,25 @@
           <div class="why-matters-stat">
             <span class="stat-value">€1.25B</span>
             <span class="stat-label" data-lang="es">coste anual para<br>agricultores</span>
-            <span class="stat-label hidden" data-lang="en">annual cost to<br>farmers</span>
+            <span class="stat-label hidden" data-lang="en">annual<br><strong>cost to farmers</strong></span>
             <span class="stat-source"><a href="https://www.peer.eu/news/detail/soil-erosion-costs-european-farmers-eur125-billion-a-year" target="_blank" rel="noopener">EU JRC / PEER</a></span>
           </div>
           <div class="why-matters-stat">
             <span class="stat-value">$37.6B</span>
             <span class="stat-label" data-lang="es">pérdidas anuales de<br>productividad en EE.UU.</span>
-            <span class="stat-label hidden" data-lang="en">annual US<br>productivity losses</span>
+            <span class="stat-label hidden" data-lang="en">annual<br><strong>US productivity losses</strong></span>
             <span class="stat-source"><a href="https://www.nrdc.org/stories/soil-erosion-101" target="_blank" rel="noopener">NRDC</a></span>
           </div>
           <div class="why-matters-stat">
             <span class="stat-value">60%</span>
             <span class="stat-label" data-lang="es">de suelos<br>degradados</span>
-            <span class="stat-label hidden" data-lang="en">of soils<br>now unhealthy</span>
+            <span class="stat-label hidden" data-lang="en">of soils<br><strong>now unhealthy</strong></span>
             <span class="stat-source"><a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/urgent-action-needed-reverse-soil-degradation-europe-2024-10-22_en" target="_blank" rel="noopener">EU State of Soils 2024</a></span>
           </div>
           <div class="why-matters-stat">
             <span class="stat-value" style="font-size:clamp(1.8rem,4vw,2.8rem);">57.6B t</span>
             <span class="stat-label" data-lang="es">de suelo perdido en<br>el Medio Oeste de EE.UU.</span>
-            <span class="stat-label hidden" data-lang="en">of soil lost in<br>the US Midwest alone</span>
+            <span class="stat-label hidden" data-lang="en">of soil<br><strong>lost in the US Midwest alone</strong></span>
             <span class="stat-source"><a href="https://www.pnas.org/doi/10.1073/pnas.1922375118" target="_blank" rel="noopener">PNAS</a></span>
           </div>
         </div>
@@ -686,17 +710,35 @@
           <span class="section-eyebrow hidden" data-lang="en">The Project</span>
 
           <h2 class="mt-3 mb-6" style="font-family:'Lora',Georgia,serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; color:var(--soil-dark); line-height:1.3;" data-lang="es">
-            Un gap en los datos que limita lo que podemos aprender.
+            Un gap en los datos que limita lo que podemos aprender
           </h2>
           <h2 class="mt-3 mb-6 hidden" style="font-family:'Lora',Georgia,serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; color:var(--soil-dark); line-height:1.3;" data-lang="en">
-            A data gap that limits what we can learn.
+            A data gap that limits what we can learn
           </h2>
 
           <p class="text-lg leading-relaxed" style="color:var(--soil-mid); text-align:justify;" data-lang="es">
-            Los métodos de deep learning para detección de erosión han mostrado resultados prometedores, pero la ausencia de datos públicos dificulta comparar, reproducir o mejorar esos modelos: de 113 artículos revisados, solo 2 comparten datos accesibles, y ambos cubren una única región y un único sensor. <strong style="color:var(--soil-brown);">SoilSaveR</strong> es un intento de empezar a cerrar esa brecha, proponiendo una metodología para generar un <strong style="color:var(--soil-brown);">dataset etiquetado, público, multimodal y multi-región para detección de erosión desde imágenes satelitales</strong>. La metodología combina modelado determinista (RUSLE + índices topográficos del DEM) para acotar automáticamente las zonas candidatas, con verificación visual humana sobre imágenes Sentinel-2, buscando que las etiquetas estén a la vez físicamente fundamentadas y visualmente confirmadas.
+            La detección de erosión mediante métodos de deep learning ha mostrado resultados prometedores, pero la ausencia de datos públicos dificulta reproducirlos o mejorarlos: de 113 artículos revisados, solo 2 comparten datos accesibles, y ambos cubren una única región y un único sensor.
+          </p>
+          <p class="text-lg leading-relaxed mt-4" style="color:var(--soil-mid); text-align:justify;" data-lang="es">
+            <strong style="color:var(--soil-brown);">SoilSaveR</strong> es un intento de cerrar esa brecha, proponiendo una metodología para generar un <strong style="color:var(--soil-brown);">dataset público y de acceso abierto</strong>. En lugar de depender de un único sensor o ubicación, <strong style="color:var(--soil-brown);">combina múltiples fuentes</strong>, abarca <strong style="color:var(--soil-brown);">regiones diversas</strong> y ofrece <strong style="color:var(--soil-brown);">etiquetas explícitas</strong> que indican dónde ocurre la erosión.
+          </p>
+          <p class="text-lg leading-relaxed mt-4" style="color:var(--soil-mid); text-align:justify;" data-lang="es">
+            En resumen, <strong style="color:var(--soil-brown);">SoilSaveR</strong> propone generar un <strong style="color:var(--soil-brown);">dataset etiquetado</strong>, <strong style="color:var(--soil-brown);">público</strong>, <strong style="color:var(--soil-brown);">multimodal y multi-región para la detección de erosión a partir de imágenes satelitales</strong>.
+          </p>
+          <p class="text-lg leading-relaxed mt-4" style="color:var(--soil-mid); text-align:justify;" data-lang="es">
+            Esta metodología utiliza primero <strong style="color:var(--soil-brown);">fórmulas matemáticas fijas</strong> basadas en la física y la geografía (<strong style="color:var(--soil-brown);">RUSLE + índices topográficos del DEM</strong>) para acotar automáticamente las zonas con alto riesgo de erosión, y luego una verificación visual humana sobre imágenes satelitales Sentinel-2, para asegurar que cada etiqueta tenga sentido físico y esté confirmada visualmente.
           </p>
           <p class="text-lg leading-relaxed hidden" style="color:var(--soil-mid); text-align:justify;" data-lang="en">
-            Deep learning methods for erosion detection have shown promising results, but the absence of public data makes it difficult to compare, reproduce or improve those models: of 113 papers reviewed, only 2 share accessible data, and both cover a single region and a single sensor. <strong style="color:var(--soil-brown);">SoilSaveR</strong> is an attempt to start closing that gap, proposing a methodology to generate a <strong style="color:var(--soil-brown);">labeled, public, multi-modal, multi-region dataset for erosion detection from satellite imagery</strong>. The methodology combines deterministic modeling (RUSLE + DEM-derived topographic indices) to automatically narrow candidate zones, with human visual verification on Sentinel-2 imagery, seeking labels that are both physically grounded and visually confirmed.
+            The detection of erosion via deep learning methods has shown promising results, but the absence of public data makes them difficult to reproduce or improve: of 113 papers reviewed, only 2 share accessible data—and both cover a single region and a single sensor.
+          </p>
+          <p class="text-lg leading-relaxed mt-4 hidden" style="color:var(--soil-mid); text-align:justify;" data-lang="en">
+            <strong style="color:var(--soil-brown);">SoilSaveR</strong> is an attempt to close that gap by proposing a methodology to generate a <strong style="color:var(--soil-brown);">public</strong>, <strong style="color:var(--soil-brown);">open-access dataset</strong>. Instead of relying on a single sensor or location, it <strong style="color:var(--soil-brown);">combines multiple sources</strong>, covers <strong style="color:var(--soil-brown);">diverse regions</strong>, and provides <strong style="color:var(--soil-brown);">explicit labels</strong> showing where erosion occurs.
+          </p>
+          <p class="text-lg leading-relaxed mt-4 hidden" style="color:var(--soil-mid); text-align:justify;" data-lang="en">
+            In short, <strong style="color:var(--soil-brown);">SoilSaveR</strong> proposes to generate a <strong style="color:var(--soil-brown);">labeled</strong>, <strong style="color:var(--soil-brown);">public</strong>, <strong style="color:var(--soil-brown);">multi-modal</strong>, <strong style="color:var(--soil-brown);">multi-region dataset for erosion detection from satellite imagery</strong>.
+          </p>
+          <p class="text-lg leading-relaxed mt-4 hidden" style="color:var(--soil-mid); text-align:justify;" data-lang="en">
+            This methodology first uses <strong style="color:var(--soil-brown);">fixed mathematical formulas</strong> grounded in physics and geography (<strong style="color:var(--soil-brown);">RUSLE + DEM topographic indices</strong>) to automatically narrow down high-risk erosion zones, followed by human visual verification on Sentinel-2 satellite imagery to ensure each label makes physical sense and is visually proven.
           </p>
         </div>
 
@@ -704,23 +746,23 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 animate-on-scroll">
           <div class="text-center">
             <span class="stat-value">10+</span>
-            <span class="stat-label" data-lang="es">fuentes de datos<br>integradas</span>
-            <span class="stat-label hidden" data-lang="en">data sources<br>integrated</span>
+            <span class="stat-label" data-lang="es">fuentes de datos<br><strong>integradas</strong></span>
+            <span class="stat-label hidden" data-lang="en">data sources<br><strong>integrated</strong></span>
           </div>
           <div class="text-center">
             <span class="stat-value">3</span>
             <span class="stat-label" data-lang="es">regiones de<br>estudio activas</span>
-            <span class="stat-label hidden" data-lang="en">active study<br>regions</span>
+            <span class="stat-label hidden" data-lang="en">active<br><strong>study regions</strong></span>
           </div>
           <div class="text-center">
             <span class="stat-value" style="font-size:clamp(1.8rem,4vw,2.8rem);">50–60%</span>
-            <span class="stat-label" data-lang="es">datos de calidad vía<br>modelos semi-supervisados</span>
-            <span class="stat-label hidden" data-lang="en">quality data via<br>semi-supervised models</span>
+            <span class="stat-label" data-lang="es">datos de calidad vía<br><strong>modelos semi-supervisados</strong></span>
+            <span class="stat-label hidden" data-lang="en">quality data via<br><strong>semi-supervised models</strong></span>
           </div>
           <div class="text-center">
             <span class="stat-value" style="font-size:clamp(1.8rem,4vw,2.8rem);">100%</span>
-            <span class="stat-label" data-lang="es">abierto y<br>reproducible</span>
-            <span class="stat-label hidden" data-lang="en">open &<br>reproducible</span>
+            <span class="stat-label" data-lang="es"><strong>abierto y<br>reproducible</strong></span>
+            <span class="stat-label hidden" data-lang="en"><strong>open &amp;<br>reproducible</strong></span>
           </div>
         </div>
 
@@ -729,7 +771,7 @@
 
     <!-- ── SCROLLYTELLING ─────────────────────────────────── -->
     <!-- Section header -->
-    <div style="background:var(--soil-brown); padding:3rem 1.5rem; text-align:center;">
+    <div id="erosion-from-space" style="background:var(--soil-brown); padding:3rem 1.5rem; text-align:center;">
       <h2 style="font-family:'Lora',Georgia,serif; font-size:clamp(1.6rem,3.5vw,2.4rem); font-weight:700; color:var(--soil-cream); line-height:1.3;" data-lang="es">
         Así se ve la erosión desde el espacio
       </h2>
@@ -737,11 +779,21 @@
         This is what erosion looks like from space
       </h2>
       <p class="mt-3" style="font-family:Georgia,'Times New Roman',serif; font-size:1rem; color:rgba(240,222,184,0.7); max-width:600px; margin-inline:auto; line-height:1.6;" data-lang="es">
-        Patones, Madrid · El mismo territorio en 1956 y 2025. Desliza para revelar los cambios.
+        <span style="display:block;">· Patones, Madrid ·</span>
+        <span style="display:block; margin-top:0.75rem;">El <strong style="color:var(--soil-cream);">mismo territorio</strong> en <strong style="color:var(--soil-cream);">1956</strong> y <strong style="color:var(--soil-cream);">2025</strong>.</span>
       </p>
       <p class="mt-3 hidden" style="font-family:Georgia,'Times New Roman',serif; font-size:1rem; color:rgba(240,222,184,0.7); max-width:600px; margin-inline:auto; line-height:1.6;" data-lang="en">
-        Patones, Madrid · The same territory in 1956 and 2025. Scroll to reveal the changes.
+        <span style="display:block;">· Patones, Madrid ·</span>
+        <span style="display:block; margin-top:0.75rem;">Compare the same territory in <strong style="color:var(--soil-cream);">1956</strong> and <strong style="color:var(--soil-cream);">2025</strong>.</span>
       </p>
+      <!-- Scroll cue, same look as the hero's -->
+      <a href="#scrollytelling-wrapper" class="fs-scroll" aria-label="Scroll to the comparison">
+        <span class="font-mono-accent" style="font-size:0.72rem; letter-spacing:0.25em; text-transform:uppercase;" data-lang="es">Desplaza</span>
+        <span class="font-mono-accent hidden" style="font-size:0.72rem; letter-spacing:0.25em; text-transform:uppercase;" data-lang="en">Scroll</span>
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </a>
     </div>
 
     <div id="scrollytelling-wrapper">
@@ -865,7 +917,7 @@
             Cómo construimos el dataset
           </h2>
           <h2 class="font-display mt-2 hidden" style="font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; color:var(--soil-dark);" data-lang="en">
-            How we build the dataset
+            How scientists build the dataset
           </h2>
         </div>
 
