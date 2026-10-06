@@ -591,6 +591,116 @@
     #header .ss-divider { width: 1px; height: 2.5rem; background: rgba(139, 94, 60, 0.3); }
   </style>
   <script src="../../analytics.js"></script>
+  <!-- Visual design chosen in the SoilSaveR tester (colours, textures, satellite backgrounds, logo effects) -->
+  <style id="soilsaver-theme">
+    #hero{background-color:#1F1007!important;background-image:none!important;background-blend-mode:multiply!important;background-size:900px!important}
+    #hero::before{content:none!important}
+    #hero::after{content:none!important}
+    #hero{background-image:none!important;position:relative;isolation:isolate;overflow:hidden}
+    #hero::after{content:''!important;position:absolute!important;inset:0px!important;z-index:-1!important;pointer-events:none;background:linear-gradient(rgba(31,16,7,0.35),rgba(31,16,7,0.35)),url('../../assets/brand/soilsaver/fondo_satelital_horizontal.jpg') center/cover no-repeat #1F1007!important;filter:blur(0px)}
+    #hero-content img{width:min(600px,92vw)!important;filter:drop-shadow(0 0 1px rgba(31,16,7,0.40)) drop-shadow(0 0 2px rgba(31,16,7,0.40)) drop-shadow(0 0 5px rgba(31,16,7,0.40))!important}
+    #hero-content>.animate-on-scroll:first-child{position:relative;isolation:isolate}
+    #hero-content>.animate-on-scroll:first-child::before{content:'';position:absolute;left:50%;top:50%;width:660px;height:397px;max-width:100vw;transform:translate(-50%,-50%);z-index:-1;pointer-events:none;background:radial-gradient(ellipse closest-side,rgba(31,16,7,0.15) 0%,rgba(31,16,7,0.15) 50%,rgba(31,16,7,0.00) 100%)}
+    .hero-tagline{color:#E8D5A3!important;font-size:32px!important;margin-top:48px!important;position:relative!important;left:32px!important}
+    .hero-scroll{color:#E8D5A3!important}
+    #header{background:rgba(251,243,224,1.00)!important;border-bottom:0!important;box-shadow:none!important;}
+    #header>div:first-child{padding-top:17px!important;padding-bottom:17px!important}
+    #header a,#header nav,#header .lang-switcher,#header .lang-switcher button,#mobile-menu-button svg{color:#5C3317!important}
+    #header .lang-switcher button.active{color:#5C3317!important}
+    #header a[href="#hero"] img{height:44px!important}
+    #header .ss-divider{background:#5C3317!important;opacity:.3}
+    #mobile-menu{background:#FBF3E0!important}
+    #header nav,#header nav a,#mobile-menu a{font-size:15px!important}
+    #header nav{gap:38px!important}
+    #header nav a[href="#project-intro"]{margin-left:0px!important}
+    #header>div:first-child>div:first-child{gap:0!important}
+    #header>div:first-child>div:first-child>a[href="#hero"],#header>div:first-child>div:first-child>.ss-divider:nth-child(2){margin-right:28px!important}
+    #header a[aria-label="Darwin Geospatial"]{margin-right:26px!important}
+    #header>div:first-child>div:first-child>.ss-divider{margin-left:0!important}
+    #header>div:first-child>div:first-child>.ss-divider:last-child{margin-right:0!important}
+    #header a[aria-label="Universidad Rey Juan Carlos"]{margin-right:0!important}
+    #header .pt-chip{margin-right:33.2px}
+    #header a[aria-label="Darwin Geospatial"],#header a[aria-label="Universidad Rey Juan Carlos"]{opacity:1!important}
+    #header .pt-chip{display:none;align-items:center;background:transparent;padding:0;border-radius:10px}
+    @media (min-width:640px){#header .pt-chip{display:flex}}
+    #header>div:first-child>div:first-child>a[href="#hero"] img{filter:none!important}
+    #why-it-matters{background:#1F1007!important}
+    #why-it-matters h2{color:#F0DEB8!important;font-weight:500!important}
+    #why-it-matters .section-eyebrow{font-size:22px!important}
+    #why-it-matters .section-eyebrow,#why-it-matters .stat-value{color:#C4862D!important}
+    #research-group{background-color:#1F1007!important;background-image:none!important;background-blend-mode:multiply!important;background-size:900px!important;}
+    #research-group{background-image:none!important;position:relative;isolation:isolate;overflow:hidden}
+    #research-group::before{content:'';position:absolute;inset:0px;z-index:-1;pointer-events:none;background:linear-gradient(rgba(31,16,7,0.45),rgba(31,16,7,0.45)),url('../../assets/brand/soilsaver/fondo_satelital.jpg') center/cover no-repeat;filter:blur(0px)}
+    #research-group>div>.animate-on-scroll:first-child .section-eyebrow{color:#FFFFFF!important;font-size:22px!important;}
+    #research-group>div>.animate-on-scroll:first-child h2{font-weight:600!important;color:#FBF3E0!important}
+    #research-group>div>p{color:#FFFFFF!important}
+    #research-group>div>p strong{color:#E8D5A3!important}
+    #soil-contact{background-color:#1F1007!important;background-image:none!important;}
+    #soil-contact h2{color:#F0DEB8!important}
+    #soil-contact p{color:rgba(240,222,184,0.75)!important}
+    #soil-contact .btn-soil{background:#5C3317!important;color:#F0DEB8!important;border:none!important}
+    #soil-contact .btn-soil:hover{filter:brightness(1.12)}
+    #footer{background:#FBF3E0!important}
+    #footer .ft-logo{height:64px!important}
+    #footer .font-mono-accent[data-lang]{color:rgba(31,16,7,0.95)!important;opacity:1!important}
+    #footer p.font-mono-accent{color:rgba(31,16,7,0.95)!important}
+    #footer a[href*="privacy"]{color:rgba(92,51,23,0.95)!important}
+    #footer .ft-line{background:rgba(232,213,163,1.00)!important}
+    #latest-updates{background-color:#5C3317!important;background-image:none!important;}
+    #latest-updates .nasa-mini{background-color:#FBF3E0!important;border-color:#5C3317!important;background-image:none!important;}
+    #latest-updates .nasa-mini h3{color:#1F1007!important}
+    #latest-updates .nasa-mini p:not([style*="soil-warm"]){color:#5C3317!important}
+    #latest-updates .nasa-mini [style*="soil-warm"]{color:#1F1007!important}
+    #research-group{padding-bottom:64px!important}
+    #latest-updates{padding-top:64px!important}
+    #research-group{--rg-logo-gap:14px;--rg-logo-s:41px;--rg-li-s:26px;--rg-li-w:0.5}
+    #research-group .rg-card{background-color:#5C3317!important;border-color:#5C3317!important;background-image:none!important;background-blend-mode:multiply!important;background-size:900px!important;}
+    #research-group .rg-name{color:#FFFFFF!important}
+    #research-group .rg-role{color:#E8D5A3!important}
+    #research-group .rg-role.lead{color:#E8D5A3!important}
+    #research-group .rg-bio,#research-group .rg-link{color:#FFFFFF!important}
+    #methodology{background-color:#FBF3E0!important;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'900'%20height%3D'900'%3E%3Cfilter%20id%3D'f'%20x%3D'0'%20y%3D'0'%20width%3D'100%25'%20height%3D'100%25'%3E%3CfeTurbulence%20type%3D'fractalNoise'%20baseFrequency%3D'0.0195'%20numOctaves%3D'5'%20seed%3D'11'%20stitchTiles%3D'stitch'%20result%3D'a'%2F%3E%3CfeTurbulence%20type%3D'fractalNoise'%20baseFrequency%3D'0.22'%20numOctaves%3D'3'%20seed%3D'4'%20stitchTiles%3D'stitch'%20result%3D'b'%2F%3E%3CfeComposite%20in%3D'a'%20in2%3D'b'%20operator%3D'arithmetic'%20k2%3D'0.62'%20k3%3D'0.38'%20result%3D'c'%2F%3E%3CfeColorMatrix%20in%3D'c'%20type%3D'matrix'%20values%3D'0%200%200%200%200%20%200%200%200%200%200%20%200%200%200%200%200%20%20-2.4%200%200%200%201.395'%20result%3D'm'%2F%3E%3CfeFlood%20flood-color%3D'%238B5E3C'%2F%3E%3CfeComposite%20in2%3D'm'%20operator%3D'in'%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20filter%3D'url(%23f)'%20opacity%3D'0.1'%2F%3E%3C%2Fsvg%3E")!important;background-blend-mode:normal!important;background-size:900px!important;}
+    #methodology>div>.animate-on-scroll:first-child .section-eyebrow{color:#5C3317!important;font-style:normal!important;font-size:22px!important;}
+    #methodology>div>.animate-on-scroll:first-child h2{font-weight:700!important;color:#1F1007!important}
+    #methodology .soil-card{background:#FBF3E0!important;border-left-color:#8B5E3C!important;border-top:3px solid #8B5E3C!important;border-bottom:3px solid #8B5E3C!important;}
+    #methodology .rounded-xl{background-color:#5C3317!important;background-image:none!important;}
+    #methodology .rounded-xl h3{color:#C4862D!important;font-family:'Lora',Georgia,serif!important;font-size:22px!important;font-style:normal!important;font-weight:700!important;letter-spacing:.15em!important;text-transform:uppercase!important;line-height:1.4!important;}
+    #methodology .rounded-xl ul{color:#FFFFFF!important}
+    #methodology .rounded-xl strong{color:#C4862D!important}
+    #methodology .soil-card h3{color:#5C3317!important}
+    #methodology .soil-card ul{color:#8B5E3C!important}
+    #methodology .soil-card strong{color:#5C3317!important}
+    #erosion-from-space h2{font-weight:600!important}
+    #erosion-from-space p{font-weight:400!important}
+    #project-intro{background-color:#FBF3E0!important;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'900'%20height%3D'900'%3E%3Cfilter%20id%3D'f'%20x%3D'0'%20y%3D'0'%20width%3D'100%25'%20height%3D'100%25'%3E%3CfeTurbulence%20type%3D'fractalNoise'%20baseFrequency%3D'0.0195'%20numOctaves%3D'5'%20seed%3D'11'%20stitchTiles%3D'stitch'%20result%3D'a'%2F%3E%3CfeTurbulence%20type%3D'fractalNoise'%20baseFrequency%3D'0.22'%20numOctaves%3D'3'%20seed%3D'4'%20stitchTiles%3D'stitch'%20result%3D'b'%2F%3E%3CfeComposite%20in%3D'a'%20in2%3D'b'%20operator%3D'arithmetic'%20k2%3D'0.62'%20k3%3D'0.38'%20result%3D'c'%2F%3E%3CfeColorMatrix%20in%3D'c'%20type%3D'matrix'%20values%3D'0%200%200%200%200%20%200%200%200%200%200%20%200%200%200%200%200%20%20-2.4%200%200%200%201.395'%20result%3D'm'%2F%3E%3CfeFlood%20flood-color%3D'%238B5E3C'%2F%3E%3CfeComposite%20in2%3D'm'%20operator%3D'in'%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20filter%3D'url(%23f)'%20opacity%3D'0.1'%2F%3E%3C%2Fsvg%3E")!important;background-blend-mode:normal!important;background-size:900px!important}
+    #latest-updates .section-eyebrow{color:#FFFFFF!important}
+    #project-intro .section-eyebrow{color:#5C3317!important}
+    #project-intro .section-eyebrow,#latest-updates .section-eyebrow{font-size:22px!important;}
+    #project-intro h2{color:#1F1007!important;font-weight:700!important;margin-top:28px!important;margin-bottom:37px!important;font-size:43px!important;}
+    #project-intro .animate-on-scroll:first-child>.section-eyebrow:not(.hidden),#project-intro .animate-on-scroll:first-child>h2:not(.hidden){text-align:center;display:block}
+    #project-intro p{color:#8B5E3C!important}
+    #project-intro p strong{color:#5C3317!important}
+    #project-intro .stat-value{color:#5C3317!important}
+    #project-intro .stat-label{color:#5C3317!important}
+    #why-it-matters .stat-value{font-weight:600!important}
+    #why-it-matters h2{margin-top:16px!important;text-align:center!important}
+    #why-it-matters .section-eyebrow{font-style:normal!important}
+    #project-intro .section-eyebrow,#latest-updates .section-eyebrow{font-style:normal!important}
+    #why-it-matters .section-eyebrow:not(.hidden){display:block;text-align:center!important}
+    #why-it-matters .stat-source{margin-top:15px!important;font-size:13px!important}
+    #why-it-matters .stat-source a{color:#C4862D!important;border-bottom-color:#C4862D!important}
+    #why-it-matters .stat-label{color:rgba(255,255,255,0.75)!important}
+    #why-it-matters .stat-label strong{font-weight:700;color:#E8D5A3!important;display:inline-block;margin-top:2px}
+    #header a[aria-label="Darwin Geospatial"] img{height:39.6px!important}
+    #header a[aria-label="Universidad Rey Juan Carlos"] img{height:35.8px!important}
+    #header a[aria-label="Darwin Geospatial"] img,#header a[aria-label="Universidad Rey Juan Carlos"] img{filter:none!important}
+    #header a[aria-label="Darwin Geospatial"] img{filter:none!important}
+    #header a[aria-label="Darwin Geospatial"]{position:relative}
+    #header a[aria-label="Darwin Geospatial"]::after{content:'';position:absolute;top:0;left:42.8px;width:64.8px;height:39.6px;background:url('../../assets/brand/logo_darwin.png') no-repeat;background-size:107.6px 39.6px;background-position:-42.8px 0;filter:drop-shadow(0 0 1px rgba(255,255,255,0.20)) drop-shadow(0 0 5px rgba(255,255,255,0.20)) drop-shadow(0 0 14px rgba(255,255,255,0.20));pointer-events:none}
+#header a[aria-label="Darwin Geospatial"]{position:relative;isolation:isolate}
+    #header a[aria-label="Darwin Geospatial"]::before{content:'';position:absolute;left:50%;top:50%;width:151px;height:83px;transform:translate(calc(-50% + 16px),calc(-50% + -2px));z-index:-1;pointer-events:none;background:radial-gradient(ellipse closest-side,rgba(232,213,163,0.65) 0%,rgba(232,213,163,0.65) 0%,rgba(232,213,163,0.00) 100%)}
+    #header{overflow:hidden}
+  </style>
 </head>
 
 <body>
@@ -606,12 +716,12 @@
         </a>
         <span class="ss-divider hidden sm:block"></span>
         <!-- Darwin + URJC, set apart -->
-        <a href="../../index.html#home" aria-label="Darwin Geospatial" class="hidden sm:block opacity-90 hover:opacity-100 transition-opacity">
+        <span class="pt-chip"><a href="../../index.html#home" aria-label="Darwin Geospatial" class="hidden sm:block opacity-90 hover:opacity-100 transition-opacity">
           <img src="../../assets/brand/logo_darwin.png" alt="Darwin Geospatial" class="h-7 md:h-9 w-auto">
         </a>
         <a href="https://www.urjc.es/" target="_blank" rel="noopener" aria-label="Universidad Rey Juan Carlos" class="hidden sm:block opacity-90 hover:opacity-100 transition-opacity">
           <img src="../../assets/partners/transparent/urjc_simbolo.png" alt="Universidad Rey Juan Carlos" class="h-[1.58rem] md:h-[2.03rem] w-auto">
-        </a>
+        </a></span>
         <!-- ml-[5px] matches the transparent margin on the left of logo_darwin.png, so both partner logos sit centred between the two dividers -->
         <span class="ss-divider hidden md:block ml-[5px]"></span>
       </div>
@@ -709,25 +819,25 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 animate-on-scroll">
           <div class="why-matters-stat">
             <span class="stat-value">€1.25B</span>
-            <span class="stat-label" data-lang="es">coste anual para<br>agricultores</span>
+            <span class="stat-label" data-lang="es">coste anual<br><strong>para los agricultores</strong></span>
             <span class="stat-label hidden" data-lang="en">annual<br><strong>cost to farmers</strong></span>
             <span class="stat-source"><a href="https://www.peer.eu/news/detail/soil-erosion-costs-european-farmers-eur125-billion-a-year" target="_blank" rel="noopener">EU JRC / PEER</a></span>
           </div>
           <div class="why-matters-stat">
             <span class="stat-value">$37.6B</span>
-            <span class="stat-label" data-lang="es">pérdidas anuales de<br>productividad en EE.UU.</span>
+            <span class="stat-label" data-lang="es">pérdidas anuales<br><strong>de productividad en EE. UU.</strong></span>
             <span class="stat-label hidden" data-lang="en">annual<br><strong>US productivity losses</strong></span>
             <span class="stat-source"><a href="https://www.nrdc.org/stories/soil-erosion-101" target="_blank" rel="noopener">NRDC</a></span>
           </div>
           <div class="why-matters-stat">
             <span class="stat-value">60%</span>
-            <span class="stat-label" data-lang="es">de suelos<br>degradados</span>
+            <span class="stat-label" data-lang="es">de los suelos<br><strong>hoy degradados</strong></span>
             <span class="stat-label hidden" data-lang="en">of soils<br><strong>now unhealthy</strong></span>
             <span class="stat-source"><a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/urgent-action-needed-reverse-soil-degradation-europe-2024-10-22_en" target="_blank" rel="noopener">EU State of Soils 2024</a></span>
           </div>
           <div class="why-matters-stat">
             <span class="stat-value" style="font-size:clamp(1.8rem,4vw,2.8rem);">57.6B t</span>
-            <span class="stat-label" data-lang="es">de suelo perdido en<br>el Medio Oeste de EE.UU.</span>
+            <span class="stat-label" data-lang="es">de suelo<br><strong>perdido solo en el Medio Oeste de EE. UU.</strong></span>
             <span class="stat-label hidden" data-lang="en">of soil<br><strong>lost in the US Midwest alone</strong></span>
             <span class="stat-source"><a href="https://www.pnas.org/doi/10.1073/pnas.1922375118" target="_blank" rel="noopener">PNAS</a></span>
           </div>
@@ -745,7 +855,7 @@
           <span class="section-eyebrow hidden" data-lang="en">The Project</span>
 
           <h2 class="mt-3 mb-6" style="font-family:'Lora',Georgia,serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; color:var(--soil-dark); line-height:1.3;" data-lang="es">
-            Un gap en los datos que limita lo que podemos aprender
+            Una brecha en los datos que limita lo que podemos aprender
           </h2>
           <h2 class="mt-3 mb-6 hidden" style="font-family:'Lora',Georgia,serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; color:var(--soil-dark); line-height:1.3;" data-lang="en">
             A data gap that limits what we can learn
@@ -755,10 +865,10 @@
             La detección de erosión mediante métodos de deep learning ha mostrado resultados prometedores, pero la ausencia de datos públicos dificulta reproducirlos o mejorarlos: de 113 artículos revisados, solo 2 comparten datos accesibles, y ambos cubren una única región y un único sensor.
           </p>
           <p class="text-lg leading-relaxed mt-4" style="color:var(--soil-mid); text-align:justify;" data-lang="es">
-            <strong style="color:var(--soil-brown);">SoilSaveR</strong> es un intento de cerrar esa brecha, proponiendo una metodología para generar un <strong style="color:var(--soil-brown);">dataset público y de acceso abierto</strong>. En lugar de depender de un único sensor o ubicación, <strong style="color:var(--soil-brown);">combina múltiples fuentes</strong>, abarca <strong style="color:var(--soil-brown);">regiones diversas</strong> y ofrece <strong style="color:var(--soil-brown);">etiquetas explícitas</strong> que indican dónde ocurre la erosión.
+            <strong style="color:var(--soil-brown);">SoilSaveR</strong> es un intento de cerrar esa brecha, proponiendo una metodología para generar un <strong style="color:var(--soil-brown);">dataset público</strong> y <strong style="color:var(--soil-brown);">de acceso abierto</strong>. En lugar de depender de un único sensor o ubicación, <strong style="color:var(--soil-brown);">combina múltiples fuentes</strong>, abarca <strong style="color:var(--soil-brown);">regiones diversas</strong> y ofrece <strong style="color:var(--soil-brown);">etiquetas explícitas</strong> que indican dónde ocurre la erosión.
           </p>
           <p class="text-lg leading-relaxed mt-4" style="color:var(--soil-mid); text-align:justify;" data-lang="es">
-            En resumen, <strong style="color:var(--soil-brown);">SoilSaveR</strong> propone generar un <strong style="color:var(--soil-brown);">dataset etiquetado</strong>, <strong style="color:var(--soil-brown);">público</strong>, <strong style="color:var(--soil-brown);">multimodal y multi-región para la detección de erosión a partir de imágenes satelitales</strong>.
+            En resumen, <strong style="color:var(--soil-brown);">SoilSaveR</strong> propone generar un <strong style="color:var(--soil-brown);">dataset etiquetado</strong>, <strong style="color:var(--soil-brown);">público</strong>, <strong style="color:var(--soil-brown);">multimodal</strong>, <strong style="color:var(--soil-brown);">multi-región para la detección de erosión a partir de imágenes satelitales</strong>.
           </p>
           <p class="text-lg leading-relaxed mt-4" style="color:var(--soil-mid); text-align:justify;" data-lang="es">
             Esta metodología utiliza primero <strong style="color:var(--soil-brown);">fórmulas matemáticas fijas</strong> basadas en la física y la geografía (<strong style="color:var(--soil-brown);">RUSLE + índices topográficos del DEM</strong>) para acotar automáticamente las zonas con alto riesgo de erosión, y luego una verificación visual humana sobre imágenes satelitales Sentinel-2, para asegurar que cada etiqueta tenga sentido físico y esté confirmada visualmente.
@@ -786,7 +896,7 @@
           </div>
           <div class="text-center">
             <span class="stat-value">3</span>
-            <span class="stat-label" data-lang="es">regiones de<br>estudio activas</span>
+            <span class="stat-label" data-lang="es">regiones<br><strong>de estudio activas</strong></span>
             <span class="stat-label hidden" data-lang="en">active<br><strong>study regions</strong></span>
           </div>
           <div class="text-center">
@@ -815,7 +925,7 @@
       </h2>
       <p class="mt-3" style="font-family:Georgia,'Times New Roman',serif; font-size:1rem; color:rgba(240,222,184,0.7); max-width:600px; margin-inline:auto; line-height:1.6;" data-lang="es">
         <span style="display:block;">· Patones, Madrid ·</span>
-        <span style="display:block; margin-top:0.75rem;">El <strong style="color:var(--soil-cream);">mismo territorio</strong> en <strong style="color:var(--soil-cream);">1956</strong> y <strong style="color:var(--soil-cream);">2025</strong>.</span>
+        <span style="display:block; margin-top:0.75rem;">Compara el mismo territorio en <strong style="color:var(--soil-cream);">1956</strong> y <strong style="color:var(--soil-cream);">2025</strong>.</span>
       </p>
       <p class="mt-3 hidden" style="font-family:Georgia,'Times New Roman',serif; font-size:1rem; color:rgba(240,222,184,0.7); max-width:600px; margin-inline:auto; line-height:1.6;" data-lang="en">
         <span style="display:block;">· Patones, Madrid ·</span>
@@ -944,7 +1054,7 @@
           <span class="section-eyebrow" data-lang="es">Objetivos & Metodología</span>
           <span class="section-eyebrow hidden" data-lang="en">Goals & Methodology</span>
           <h2 class="font-display mt-2" style="font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; color:var(--soil-dark);" data-lang="es">
-            Cómo construimos el dataset
+            Cómo construyen el dataset los científicos
           </h2>
           <h2 class="font-display mt-2 hidden" style="font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; color:var(--soil-dark);" data-lang="en">
             How scientists build the dataset
@@ -961,16 +1071,16 @@
               <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Modelado determinista (RUSLE + DEM)</strong> calcula susceptibilidad a la erosión y genera una máscara de zonas candidatas.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Deterministic modeling (RUSLE + DEM)</strong> computes erosion susceptibility and generates a candidate-zone mask.</li>
 
-              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Índices topográficos (TWI, SPI, slope-area)</strong> refinan las zonas candidatas con criterios físicamente fundamentados.</li>
+              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Índices topográficos (TWI</strong>, <strong style="color:var(--soil-brown);">SPI</strong>, <strong style="color:var(--soil-brown);">slope-area)</strong> refinan las zonas candidatas con criterios físicamente fundamentados.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Topographic indices (TWI</strong>, <strong style="color:var(--soil-brown);">SPI</strong>, <strong style="color:var(--soil-brown);">slope-area)</strong> refine candidate zones using physically grounded criteria.</li>
 
-              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Anotación humana guiada</strong> — los anotadores confirman presencia real de erosión solo dentro de las zonas candidatas. Reducción de esfuerzo: 50–80%.</li>
+              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">La anotación humana guiada</strong> confirma la presencia real de erosión solo dentro de las zonas candidatas, con una reducción del esfuerzo del 50–80%.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Guided human annotation</strong> confirms actual erosion presence only within candidate zones, achieving a 50–80% effort reduction.</li>
 
-              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Objetivos de etiquetado:</strong> cárcavas &gt;10 m y zonas de erosión laminar, en múltiples regiones.</li>
+              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Los objetivos de etiquetado</strong> abarcan cárcavas &gt;10 m y zonas de erosión laminar en múltiples regiones.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Labeling targets</strong> cover gullies &gt;10 m and sheet erosion zones across multiple regions.</li>
 
-              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Publicación abierta:</strong> protocolo de etiquetado, métricas de acuerdo entre anotadores y herramientas, todo liberado públicamente.</li>
+              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">La publicación abierta</strong> incluye el protocolo de etiquetado, las métricas de acuerdo entre anotadores y las herramientas, todo liberado públicamente.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Open release</strong> includes the labeling protocol, inter-annotator agreement metrics, and tools, all released publicly.</li>
             </ul>
           </div>
@@ -980,19 +1090,19 @@
             <h3 class="font-display text-xl font-bold mb-4" style="color:var(--soil-dark);" data-lang="es">Parte del stack de datos y modelos</h3>
             <h3 class="font-display text-xl font-bold mb-4 hidden" style="color:var(--soil-dark);" data-lang="en">Some of the Data & Model Stack</h3>
             <ul class="space-y-3 text-sm leading-relaxed" style="color:var(--soil-mid);">
-              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Sentinel-2 (10 m óptico)</strong> — base de etiquetado visual e imagen multiespectral de alta resolución.</li>
+              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Sentinel-2 (10 m óptico)</strong> sirve como base del etiquetado visual, con imágenes multiespectrales de alta resolución.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Sentinel-2 (10 m optical)</strong> serves as the visual labeling base using high-resolution multispectral imagery.</li>
 
-              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">ALOS PALSAR DEM (12,5 m)</strong> — modelo digital de elevación para RUSLE y cálculo de índices topográficos.</li>
+              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">ALOS PALSAR DEM (12,5 m)</strong> aporta el modelo digital de elevación para RUSLE y el cálculo de índices topográficos.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">ALOS PALSAR DEM (12.5 m)</strong> provides the digital elevation model for RUSLE and topographic index computation.</li>
 
-              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Sentinel-1 SAR (10 m, opcional)</strong> — modalidad de radar para enriquecer el dataset multimodal.</li>
+              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Sentinel-1 SAR (10 m</strong>, <strong style="color:var(--soil-brown);">opcional)</strong> añade una modalidad de radar para enriquecer el dataset multimodal.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Sentinel-1 SAR (10 m</strong>, <strong style="color:var(--soil-brown);">optional)</strong> adds a radar modality to enrich the multi-modal dataset.</li>
 
-              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Google Earth Engine</strong> — acceso y procesamiento de todos los datos satelitales en la nube.</li>
+              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Google Earth Engine</strong> se encarga del acceso y el procesamiento en la nube de todos los datos satelitales.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Google Earth Engine</strong> handles cloud-based access and processing for all satellite data.</li>
 
-              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Arquitecturas objetivo:</strong> DeepLabV3+, U-Net, SAM — los modelos de segmentación que el dataset habilita por primera vez de forma reproducible.</li>
+              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Las arquitecturas objetivo</strong> incluyen DeepLabV3+, U-Net y SAM, modelos de segmentación que este dataset permite entrenar de forma reproducible por primera vez.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Target architectures</strong> include DeepLabV3+, U-Net, and SAM as segmentation models enabled reproducibly by this dataset for the first time.</li>
             </ul>
           </div>
@@ -1000,13 +1110,13 @@
 
         <!-- Why it matters -->
         <div class="animate-on-scroll mt-10 p-8 md:p-10 rounded-xl" style="background:var(--soil-dark);">
-          <h3 class="font-display text-2xl font-bold mb-4" style="color:var(--soil-cream);" data-lang="es">¿Por qué importa?</h3>
+          <h3 class="font-display text-2xl font-bold mb-4" style="color:var(--soil-cream);" data-lang="es">Por qué importa</h3>
           <h3 class="font-display text-2xl font-bold mb-4 hidden" style="color:var(--soil-cream);" data-lang="en">Why It Matters</h3>
           <ul class="leading-relaxed" style="color:var(--soil-sand); list-style:disc; padding-left:1.25rem; margin:0; text-align:left;" data-lang="es">
-            <li style="margin-bottom:0.75rem;">Cada modelo de deep learning publicado para detección de erosión fue entrenado con <strong style="color:var(--soil-cream);">datos privados e irreproducibles</strong>.</li>
-            <li style="margin-bottom:0.75rem;">El estándar dominante, RUSLE, predice susceptibilidad, no presencia real, y sus predicciones se desvían de mediciones en campo por factores de <strong style="color:var(--soil-cream);">0,04× a 8×</strong>; solo el 41% de los estudios validan sus resultados.</li>
-            <li style="margin-bottom:0.75rem;">La detección por deep learning de cárcavas, erosión en masa y erosión laminar requiere etiquetas confirmadas visualmente, no predicciones deterministas.</li>
-            <li><strong style="color:var(--soil-cream);">SoilSaveR</strong> es la primera infraestructura de datos que hace posible entrenar y comparar modelos de segmentación de erosión de forma abierta y reproducible, combinando 10 fuentes de datos distintas.</li>
+            <li style="margin-bottom:0.75rem;">Cada modelo de deep learning publicado para detección de erosión fue entrenado con <strong style="color:var(--soil-cream);">datos privados</strong> y <strong style="color:var(--soil-cream);">no reproducibles</strong>.</li>
+            <li style="margin-bottom:0.75rem;">El estándar dominante, RUSLE, predice susceptibilidad, no presencia real, y sus predicciones se desvían de mediciones en campo por factores de <strong style="color:var(--soil-cream);">0,04× a 8×</strong>; solo el 41% de los estudios los valida con datos medidos.</li>
+            <li style="margin-bottom:0.75rem;">La detección por deep learning de cárcavas, erosión en masa y erosión laminar <strong style="color:var(--soil-cream);">requiere etiquetas confirmadas visualmente</strong>, no predicciones deterministas.</li>
+            <li><strong style="color:var(--soil-cream);">SoilSaveR</strong> es la primera infraestructura de datos que hace posible <strong style="color:var(--soil-cream);">entrenar y comparar</strong> modelos de segmentación de erosión de forma abierta y reproducible, combinando <strong style="color:var(--soil-cream);">10 fuentes de datos distintas</strong>.</li>
           </ul>
           <ul class="leading-relaxed hidden" style="color:var(--soil-sand); list-style:disc; padding-left:1.25rem; margin:0; text-align:left;" data-lang="en">
             <li style="margin-bottom:0.75rem;">Every published deep learning model for erosion detection was trained on <strong style="color:var(--soil-cream);">private</strong>, <strong style="color:var(--soil-cream);">non-reproducible data</strong>.</li>
@@ -1035,7 +1145,7 @@
         </div>
 
         <p class="animate-on-scroll text-base leading-relaxed mx-auto text-center" style="color:var(--soil-mid); max-width:44rem;" data-lang="es">
-          El <strong style="color:var(--soil-brown);">SoilSaveR Research Group</strong> nació para cerrar una brecha crítica: la ausencia de datos públicos para detectar erosión y degradación del suelo. Reunimos a investigadores de Darwin Geospatial, la Universidad Johns Hopkins y la Universidad Rey Juan Carlos para construir el primer dataset abierto, multimodal y multi-región.
+          Reunimos a investigadores de <strong style="color:var(--soil-brown);">Darwin Geospatial</strong>, la <strong style="color:var(--soil-brown);">Universidad Johns Hopkins</strong> y la <strong style="color:var(--soil-brown);">Universidad Rey Juan Carlos</strong> para construir el primer dataset abierto, multimodal y multi-región.
         </p>
         <p class="animate-on-scroll text-base leading-relaxed mx-auto text-center hidden" style="color:var(--soil-mid); max-width:44rem;" data-lang="en">
           We bring together researchers from <strong style="color:var(--soil-brown);">Darwin Geospatial</strong>, <strong style="color:var(--soil-brown);">Johns Hopkins University</strong> and <strong style="color:var(--soil-brown);">Universidad Rey Juan Carlos</strong> to build the first open, multi-modal, multi-region dataset.
@@ -1171,7 +1281,7 @@
             <div class="min-w-0 flex-1">
               <div class="rg-head">
                 <h3 class="rg-name">Javier Velázquez Saornil</h3>
-                <div class="rg-logos"><a href="https://www.ucavila.es/" target="_blank" rel="noopener" class="rg-uni-link ucav-link" aria-label="Universidad Católica de Ávila"><svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="ucav-outline" x="-20%" y="-20%" width="140%" height="140%"><feMorphology in="SourceAlpha" operator="dilate" radius="1" result="grow"/><feFlood flood-color="#fff"/><feComposite in2="grow" operator="in"/></filter></svg><img class="rg-uni ucav ucav-halo" src="../../assets/partners/transparent/ucav_letras.png" alt="" aria-hidden="true"><img class="rg-uni ucav" src="../../assets/partners/transparent/ucav_logo.png" alt="Universidad Católica de Ávila" title="Universidad Católica de Ávila"></a><a href="https://www.linkedin.com/in/javier-vel%C3%A1zquez-saornil-864b9b18/" target="_blank" rel="noopener" aria-label="LinkedIn" class="rg-link inline-flex"><svg class="rg-li" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="4" fill="none" stroke="currentColor"/><path fill="currentColor" d="M7.1 9.4H4.6V19h2.5V9.4zM5.85 5.2a1.45 1.45 0 100 2.9 1.45 1.45 0 000-2.9zM19.4 13.6c0-2.6-.55-4.4-3.5-4.4-1.42 0-2.37.78-2.76 1.52h-.04V9.4h-2.4V19h2.5v-4.75c0-1.25.24-2.47 1.79-2.47 1.53 0 1.55 1.43 1.55 2.55V19h2.5z"/></svg></a></div>
+                <div class="rg-logos"><a href="https://www.ucavila.es/" target="_blank" rel="noopener" class="rg-uni-link ucav-link" aria-label="Universidad Católica de Ávila"><svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="ucav-outline" x="-20%" y="-20%" width="140%" height="140%"><feMorphology in="SourceAlpha" operator="dilate" radius="0.5" result="grow"/><feFlood flood-color="#fff"/><feComposite in2="grow" operator="in"/></filter></svg><img class="rg-uni ucav ucav-halo" src="../../assets/partners/transparent/ucav_letras.png" alt="" aria-hidden="true"><img class="rg-uni ucav" src="../../assets/partners/transparent/ucav_logo.png" alt="Universidad Católica de Ávila" title="Universidad Católica de Ávila"></a><a href="https://www.linkedin.com/in/javier-vel%C3%A1zquez-saornil-864b9b18/" target="_blank" rel="noopener" aria-label="LinkedIn" class="rg-link inline-flex"><svg class="rg-li" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="4" fill="none" stroke="currentColor"/><path fill="currentColor" d="M7.1 9.4H4.6V19h2.5V9.4zM5.85 5.2a1.45 1.45 0 100 2.9 1.45 1.45 0 000-2.9zM19.4 13.6c0-2.6-.55-4.4-3.5-4.4-1.42 0-2.37.78-2.76 1.52h-.04V9.4h-2.4V19h2.5v-4.75c0-1.25.24-2.47 1.79-2.47 1.53 0 1.55 1.43 1.55 2.55V19h2.5z"/></svg></a></div>
               </div>
               <p class="rg-role" data-lang="es">Investigador Principal Senior</p>
               <p class="rg-role hidden" data-lang="en">Senior PI</p>
@@ -1188,7 +1298,7 @@
     <section id="latest-updates" style="background: var(--soil-light); padding: 4rem 1.5rem;">
       <div class="container mx-auto" style="max-width: 40rem;">
         <div class="animate-on-scroll text-center mb-6">
-          <span class="section-eyebrow" data-lang="es">Últimas novedades</span>
+          <span class="section-eyebrow" data-lang="es">Premios</span>
           <span class="section-eyebrow hidden" data-lang="en">Awards</span>
         </div>
         <a href="https://sede.comunidad.madrid/ayudas-becas-subvenciones/ayudas-doctorados-industriales-5" target="_blank" rel="noopener" class="nasa-mini animate-on-scroll" style="margin-bottom:1rem;" aria-label="Comunidad de Madrid – Doctorados Industriales">
@@ -1253,7 +1363,7 @@
           </a>
           <span class="ft-line" style="width:1px; height:1.75rem; background:rgba(232,213,163,0.25);"></span>
           <a href="https://www.urjc.es/" target="_blank" rel="noopener" aria-label="Universidad Rey Juan Carlos" class="opacity-90 hover:opacity-100 transition-opacity">
-            <img src="../../assets/partners/transparent/urjc_simbolo_blanco.png" alt="Universidad Rey Juan Carlos" class="h-[1.8rem] w-auto">
+            <img src="../../assets/partners/transparent/urjc_simbolo.png" alt="Universidad Rey Juan Carlos" class="h-[1.8rem] w-auto">
           </a>
         </div>
       </div>
