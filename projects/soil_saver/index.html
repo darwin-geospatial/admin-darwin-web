@@ -853,13 +853,13 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 animate-on-scroll">
           <div class="why-matters-stat">
-            <span class="stat-value">€1.25B</span>
-            <span class="stat-label" data-lang="es">coste anual<br><strong>para los agricultores</strong></span>
+            <span class="stat-value" style="font-size:clamp(1.8rem,4vw,2.8rem); white-space:nowrap;" data-lang="es">€1,25&nbsp;MM</span><span class="stat-value hidden" data-lang="en">€1.25B</span>
+            <span class="stat-label" data-lang="es">coste anual<br><strong>para agricultores</strong></span>
             <span class="stat-label hidden" data-lang="en">annual<br><strong>cost to farmers</strong></span>
             <span class="stat-source"><a href="https://www.peer.eu/news/detail/soil-erosion-costs-european-farmers-eur125-billion-a-year" target="_blank" rel="noopener">EU JRC / PEER</a></span>
           </div>
           <div class="why-matters-stat">
-            <span class="stat-value">$37.6B</span>
+            <span class="stat-value" style="font-size:clamp(1.8rem,4vw,2.8rem); white-space:nowrap;" data-lang="es">$37,6&nbsp;MM</span><span class="stat-value hidden" data-lang="en">$37.6B</span>
             <span class="stat-label" data-lang="es">pérdidas anuales<br><strong>de productividad en EE. UU.</strong></span>
             <span class="stat-label hidden" data-lang="en">annual<br><strong>US productivity losses</strong></span>
             <span class="stat-source"><a href="https://www.nrdc.org/stories/soil-erosion-101" target="_blank" rel="noopener">NRDC</a></span>
@@ -871,7 +871,7 @@
             <span class="stat-source"><a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/urgent-action-needed-reverse-soil-degradation-europe-2024-10-22_en" target="_blank" rel="noopener">EU State of Soils 2024</a></span>
           </div>
           <div class="why-matters-stat">
-            <span class="stat-value" style="font-size:clamp(1.8rem,4vw,2.8rem);">57.6B t</span>
+            <span class="stat-value" style="font-size:clamp(1.8rem,4vw,2.8rem); white-space:nowrap;" data-lang="es">57,6&nbsp;MM&nbsp;t</span><span class="stat-value hidden" style="font-size:clamp(1.8rem,4vw,2.8rem);" data-lang="en">57.6B t</span>
             <span class="stat-label" data-lang="es">de suelo<br><strong>perdido solo en el Medio Oeste de EE. UU.</strong></span>
             <span class="stat-label hidden" data-lang="en">of soil<br><strong>lost in the US Midwest alone</strong></span>
             <span class="stat-source"><a href="https://www.pnas.org/doi/10.1073/pnas.1922375118" target="_blank" rel="noopener">PNAS</a></span>
@@ -897,18 +897,18 @@
           </h1>
 
           <p class="text-lg leading-relaxed" style="color:var(--soil-mid); text-align:justify;" data-lang="es">
-            La erosión del suelo va arrancando poco a poco la tierra fértil de la que dependemos, y es una de las causas de la degradación de la tierra en todo el mundo. La inteligencia artificial puede ayudar a detectar la erosión del suelo a partir de imágenes satelitales, pero el avance está frenado por <span class="pi-underline">un problema</span>: <strong style="color:var(--soil-brown);">casi nadie comparte sus datos</strong>. En una revisión de 113 estudios sobre IA aplicada a la erosión del suelo, solo 2 hicieron públicos sus datos, y ambos se limitaban a una sola región y a un solo tipo de satélite.
+            La erosión del suelo desgasta progresivamente la tierra fértil de la que dependemos y acelera la degradación del suelo en todo el mundo. La inteligencia artificial puede ayudar a detectar esta erosión mediante imágenes satelitales, pero este avance se ve frenado por <span class="pi-underline">un gran problema</span>: <strong style="color:var(--soil-brown);">la falta de datos abiertos</strong>. Tras revisar 113 estudios sobre IA aplicada a la erosión del suelo, notamos que solo 2 poseen datos de acceso abierto, y ambos se limitan a una única región y a un solo tipo de satélite.
           </p>
           <p class="text-lg leading-relaxed mt-4" style="color:var(--soil-mid); text-align:justify;" data-lang="es">
-            <strong style="color:var(--soil-brown);">SoilSaveR busca cerrar esa brecha</strong>. Propone un método para construir un <strong style="color:var(--soil-brown);">dataset de acceso abierto</strong> para la detección de la erosión del suelo. El dataset combina <strong style="color:var(--soil-brown);">imágenes de teledetección</strong> de varias fuentes satelitales en distintas regiones, con <strong style="color:var(--soil-brown);">mapas claros</strong> que marcan exactamente dónde se produce la erosión.
+            <strong style="color:var(--soil-brown);">SoilSaveR busca cerrar esa brecha</strong>: propone un método para construir un <strong style="color:var(--soil-brown);">dataset de acceso abierto</strong> para la detección de la erosión del suelo. El dataset combina <strong style="color:var(--soil-brown);">imágenes de teledetección</strong> de varias fuentes satelitales en distintas regiones con <strong style="color:var(--soil-brown);">mapas claros</strong> que marcan exactamente dónde se produce la erosión.
           </p>
           <h2 class="pi-subtitle" data-lang="es">Cómo funciona SoilSaveR → Detectar la erosión del suelo a partir de imágenes satelitales</h2>
           <p class="text-lg leading-relaxed mt-4" style="color:var(--soil-mid); text-align:justify;" data-lang="es">
             El método funciona en dos pasos.
           </p>
           <ol class="pi-steps" data-lang="es">
-            <li><span class="pi-step-mark" aria-hidden="true">1</span><p><strong style="color:var(--soil-brown);">Modelos científicos</strong> sobre cómo el terreno y la lluvia provocan la pérdida de suelo (RUSLE e índices topográficos) <strong style="color:var(--soil-brown);">señalan automáticamente las zonas de mayor riesgo</strong>.</p></li>
-            <li><span class="pi-step-mark" aria-hidden="true">2</span><p><strong style="color:var(--soil-brown);">Personas</strong> revisan estas zonas en imágenes satelitales Sentinel-2 para confirmar que la erosión es realmente visible y que cada etiqueta tiene sentido físico.</p></li>
+            <li><span class="pi-step-mark" aria-hidden="true">1</span><p>Una serie de <strong style="color:var(--soil-brown);">modelos científicos</strong> que explican cómo el terreno y la lluvia provocan la pérdida de suelo (RUSLE e índices topográficos) <strong style="color:var(--soil-brown);">señalan automáticamente las zonas de mayor riesgo</strong>.</p></li>
+            <li><span class="pi-step-mark" aria-hidden="true">2</span><p><strong style="color:var(--soil-brown);">Seres humanos</strong> revisan estas zonas en imágenes satelitales Sentinel-2 para confirmar que la erosión es realmente visible y que cada etiqueta tiene su correspondencia física.</p></li>
           </ol>
           <p class="text-lg leading-relaxed hidden" style="color:var(--soil-mid); text-align:justify;" data-lang="en">
             Soil erosion slowly strips away the fertile land we depend on, and it drives land degradation worldwide. Artificial intelligence can help with the detection of soil erosion from satellite imagery, but progress is held back by <span class="pi-underline">one problem</span>: <strong style="color:var(--soil-brown);">hardly anyone shares their data</strong>. In a review of 113 studies on AI for soil erosion, only 2 made their data publicly available, and both were limited to a single region and a single type of satellite.
@@ -1095,7 +1095,7 @@
           <span class="section-eyebrow" data-lang="es">Objetivos & Metodología</span>
           <span class="section-eyebrow hidden" data-lang="en">Goals & Methodology</span>
           <h2 class="font-display mt-2" style="font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; color:var(--soil-dark);" data-lang="es">
-            Cómo construyen el dataset los científicos
+            Cómo los científicos construyen este dataset
           </h2>
           <h2 class="font-display mt-2 hidden" style="font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; color:var(--soil-dark);" data-lang="en">
             How scientists build the dataset
@@ -1106,14 +1106,14 @@
 
           <!-- The pipeline -->
           <div class="soil-card">
-            <h3 class="font-display text-xl font-bold mb-4" style="color:var(--soil-dark);" data-lang="es">Combinando modelos científicos con conocimiento experto humano</h3>
+            <h3 class="font-display text-xl font-bold mb-4" style="color:var(--soil-dark);" data-lang="es">Combinación de modelos científicos con conocimiento de humanos expertos</h3>
             <p class="text-sm leading-relaxed mb-3" style="color:var(--soil-mid);" data-lang="es">Revisar a mano cada imagen satelital llevaría años, por eso SoilSaveR usa un proceso de tres pasos: las computadoras hacen el trabajo pesado y las personas hacen la revisión final.</p>
             <h3 class="mt-card-title font-display text-xl font-bold mb-4 hidden" style="color:var(--soil-dark);" data-lang="en">Combining scientific models with human expertise</h3>
             <p class="text-sm leading-relaxed mb-3 hidden" style="color:var(--soil-mid);" data-lang="en">Reviewing every satellite image by hand would take years, so SoilSaveR uses a three-step process that lets computers do the heavy lifting and people do the final check.</p>
             <ul class="space-y-3 text-sm leading-relaxed" style="color:var(--soil-mid);">
-              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Paso 1: Estimar la probabilidad de erosión.</strong> Modelos científicos consolidados calculan qué tan vulnerable es cada zona a la pérdida de suelo (con el modelo RUSLE y datos de elevación). El resultado es un mapa de «<span class="pi-underline">zonas candidatas</span>».</li>
+              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Paso 1: Estimar la probabilidad de erosión.</strong> Una serie de modelos científicos consolidados calculan qué tan vulnerable es cada zona a la pérdida de suelo (a partir del modelo RUSLE y los datos de elevación). El resultado es un mapa de «<span class="pi-underline">zonas candidatas</span>».</li>
               <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Paso 2: Acotar la búsqueda.</strong> Las zonas candidatas se afinan con medidas del propio paisaje, como dónde tiende a acumularse el agua o qué tan empinado es el terreno.</li>
-              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Paso 3: Confirmación humana.</strong> Revisores capacitados examinan solo las zonas candidatas en imágenes satelitales y marcan dónde la erosión es realmente visible.</li>
+              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Paso 3: Confirmación humana.</strong> Un grupo de revisores capacitados examinan solo las zonas candidatas en imágenes satelitales y marcan dónde la erosión es realmente visible.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Step 1: Find likelihood of erosion.</strong> Established scientific models calculate how vulnerable each area is to soil loss (using the RUSLE model and elevation data). The result is a map of “<span class="pi-underline">candidate zones</span>”.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Step 2: Narrow down the search.</strong> The candidate zones are refined using measures of the landscape itself like where water tends to collect or how steep the ground is.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Step 3: Human confirmation.</strong> Trained reviewers examine only the candidate zones on satellite images and mark where erosion is actually visible.</li>
@@ -1122,12 +1122,12 @@
 
           <!-- Technology -->
           <div class="soil-card">
-            <h3 class="font-display text-xl font-bold mb-4" style="color:var(--soil-dark);" data-lang="es">Las herramientas detrás de SoilSaveR</h3>
+            <h3 class="font-display text-xl font-bold mb-4" style="color:var(--soil-dark);" data-lang="es">Las herramientas de SoilSaveR</h3>
             <h3 class="font-display text-xl font-bold mb-4 hidden" style="color:var(--soil-dark);" data-lang="en">The tools behind SoilSaveR</h3>
             <ul class="space-y-3 text-sm leading-relaxed" style="color:var(--soil-mid);">
               <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Imágenes satelitales (Sentinel-2)</strong>: las imágenes que usan los revisores para marcar la erosión. Cada píxel cubre un área de 10 × 10 metros de terreno, y el satélite capta tipos de luz que el ojo humano no puede ver, lo que ayuda a revelar diferencias en el suelo y la vegetación.</li>
               <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Mapas de elevación (ALOS PALSAR)</strong>: un mapa 3D detallado del terreno. Muestra la forma del paisaje (pendientes, valles y crestas) y alimenta los modelos científicos que predicen dónde es probable la erosión.</li>
-              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Imágenes de radar (Sentinel-1, opcional)</strong>: las imágenes de radar pueden ver a través de las nubes e incluso funcionan de noche. Sumarlas le da al dataset una segunda forma de analizar el terreno.</li>
+              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Imágenes de radar (Sentinel-1, opcional)</strong>: las imágenes de radar pueden ver a través de las nubes e incluso funcionan de noche. Sumarlas al proyecto le da al dataset una segunda forma de analizar el terreno.</li>
               <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Procesamiento en la nube (Google Earth Engine)</strong>: todos los datos satelitales se consultan y procesan en línea a través de la plataforma de Google, sin necesidad de descargar ni guardar enormes cantidades de imágenes.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Satellite images (Sentinel-2)</strong>: The images reviewers use to mark erosion. Each pixel covers a 10×10 meter patch of ground, and the satellite captures types of light the human eye cannot see, which help reveal differences in soil and vegetation.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Elevation maps (ALOS PALSAR)</strong>: A detailed 3D map of the terrain. It shows the shape of the land (slopes, valleys, and ridges) and feeds the scientific models that predict where erosion is likely.</li>
@@ -1139,13 +1139,13 @@
 
         <!-- Why it matters -->
         <div class="animate-on-scroll mt-10 p-8 md:p-10 rounded-xl" style="background:var(--soil-dark);">
-          <h3 class="font-display text-2xl font-bold mb-4" style="color:var(--soil-cream);" data-lang="es">Por qué importa SoilSaveR</h3>
+          <h3 class="font-display text-2xl font-bold mb-4" style="color:var(--soil-cream);" data-lang="es">El valor de SoilSaveR</h3>
           <h3 class="font-display text-2xl font-bold mb-4 hidden" style="color:var(--soil-cream);" data-lang="en">Why SoilSaveR matters</h3>
           <ul class="leading-relaxed" style="color:var(--soil-sand); list-style:disc; padding-left:1.25rem; margin:0; text-align:left;" data-lang="es">
-            <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">La investigación actual con IA sobre erosión no se puede verificar ni ampliar.</strong> Casi todos los modelos de IA publicados para detectar la erosión del suelo se entrenaron con datos que no son públicos. Sin acceso a esos datos, otros científicos no pueden verificar los resultados ni mejorarlos.</li>
+            <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">La investigación actual llevada a cabo con IA sobre erosión no se puede verificar ni ampliar.</strong> Casi todos los modelos de IA publicados cuyo fin es detectar la erosión del suelo se entrenaron con datos que no son públicos. Sin acceso a esos datos, otros científicos no pueden verificar los resultados ni mejorarlos.</li>
             <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">El método más común predice el riesgo, no la realidad.</strong> El enfoque más utilizado, el modelo RUSLE, estima dónde es probable que ocurra la erosión, pero no muestra dónde ocurrió realmente. Además, sus estimaciones pueden estar muy lejos de la realidad: solo el 41% de los estudios contrastan estas predicciones con datos reales.</li>
-            <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">La IA necesita ejemplos reales para aprender.</strong> Para enseñarle a un modelo de IA a reconocer rasgos de erosión, hacen falta ejemplos en los que la erosión haya sido confirmada visualmente, no solo predicha por una fórmula.</li>
-            <li><strong style="color:var(--soil-cream);">SoilSaveR llena este vacío.</strong> Al combinar múltiples fuentes de datos con verificación humana, SoilSaveR ofrece una base abierta para entrenar modelos de IA que detecten la erosión en imágenes satelitales, y para compararlos de forma justa, con los mismos datos, <strong style="color:var(--soil-cream);">para que cualquiera pueda reproducir los resultados</strong>.</li>
+            <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">La IA necesita ejemplos reales para aprender.</strong> Para enseñarle a un modelo de IA a reconocer características de la erosión, hacen falta ejemplos en los que dicha erosión haya sido confirmada visualmente, no solo predicha por una fórmula.</li>
+            <li><strong style="color:var(--soil-cream);">SoilSaveR cierra esta brecha.</strong> Al combinar múltiples fuentes de datos con verificación humana, SoilSaveR ofrece una base abierta para entrenar modelos de IA que detecten erosión en imágenes satelitales. A su vez, permite compararlos de manera justa, con los mismos datos, <strong style="color:var(--soil-cream);">para que cualquiera pueda reproducir los resultados</strong>.</li>
           </ul>
           <ul class="leading-relaxed hidden" style="color:var(--soil-sand); list-style:disc; padding-left:1.25rem; margin:0; text-align:left;" data-lang="en">
             <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">Current AI research on erosion can’t be checked or built upon.</strong> Almost all published AI models for soil erosion detection were trained on data that isn’t publicly available. Without access to the data, other scientists can’t verify the results or improve on them.</li>
