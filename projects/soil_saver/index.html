@@ -519,19 +519,27 @@
     }
 
     /* The Project: underlined phrase, subtitle and two-step list */
-    .pi-underline { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+    .rusle-link { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .rusle-link:hover { color: var(--soil-warm); }
+    /* RUSLE explainer card, shown while hovering or focusing a RUSLE link */
+    #rusle-tip { position: absolute; z-index: 60; width: min(380px, calc(100vw - 32px)); background: var(--soil-light); color: var(--soil-dark); border: 1px solid rgba(92, 51, 23, 0.25); border-radius: 0.75rem; box-shadow: 0 14px 34px rgba(31, 16, 7, 0.22); padding: 1rem 1.15rem; font-family: 'Inter', sans-serif; font-size: 0.8rem; line-height: 1.5; text-align: left; opacity: 0; visibility: hidden; transform: translateY(4px); transition: opacity .18s, transform .18s, visibility .18s; pointer-events: none; }
+    #rusle-tip.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    #rusle-tip p { margin: 0 0 0.5rem; }
+    #rusle-tip .rt-formula { font-family: 'Lora', Georgia, serif; font-weight: 700; color: var(--soil-brown); }
+    #rusle-tip ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.2rem; }
+    #rusle-tip b { color: var(--soil-brown); }
     .pi-subtitle { font-family: 'Lora', Georgia, serif; font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 700; color: var(--soil-dark); line-height: 1.35; margin-top: 2.75rem; }
     .pi-steps { list-style: none; padding: 0; margin-top: 1.25rem; display: flex; flex-direction: column; gap: 1.1rem; }
     #project-intro .stat-label { font-size: 0.85rem; }
     /* Left methodology card: English title stays on one line on desktop, shrinking with the card */
     @media (min-width: 1024px) {
       #methodology .soil-card { container-type: inline-size; }
-      #methodology .mt-card-title[data-lang="en"] { white-space: nowrap; font-size: min(1.25rem, calc(100cqi / 24.6)); }
+      #methodology .mt-card-title[data-lang="en"] { white-space: nowrap; font-size: min(1.25rem, calc(100cqi / 25.2)); }
     }
     /* English title and subtitle stay on one line on tablet/desktop, shrinking with the window if needed */
     @media (min-width: 640px) {
       #project-intro h1[data-lang="en"] { white-space: nowrap; font-size: min(var(--pi-h1, 37px), calc((min(100vw, 52rem + 3rem) - 3rem) / 22.2)) !important; }
-      #project-intro .pi-subtitle[data-lang="en"] { white-space: nowrap; font-size: min(1.5rem, calc((min(100vw, 52rem + 3rem) - 3rem) / 33.4)); }
+      #project-intro .pi-subtitle[data-lang="en"] { white-space: nowrap; font-size: min(1.5rem, calc((min(100vw, 52rem + 3rem) - 3rem) / 33.6)); }
     }
     .pi-steps.hidden { display: none; }
     .pi-steps li { display: flex; align-items: flex-start; gap: 1rem; }
@@ -897,7 +905,7 @@
           </h1>
 
           <p class="text-lg leading-relaxed" style="color:var(--soil-mid); text-align:justify;" data-lang="es">
-            La erosión del suelo desgasta progresivamente la tierra fértil de la que dependemos y acelera la degradación del suelo en todo el mundo. La inteligencia artificial puede ayudar a detectar esta erosión mediante imágenes satelitales, pero este avance se ve frenado por <span class="pi-underline">un gran problema</span>: <strong style="color:var(--soil-brown);">la falta de datos abiertos</strong>. Tras revisar 113 estudios sobre IA aplicada a la erosión del suelo, notamos que solo 2 poseen datos de acceso abierto, y ambos se limitan a una única región y a un solo tipo de satélite.
+            La erosión del suelo desgasta progresivamente la tierra fértil de la que dependemos y acelera la degradación del suelo en todo el mundo. La inteligencia artificial puede ayudar a detectar esta erosión mediante imágenes satelitales, pero este avance se ve frenado por un gran problema: <strong style="color:var(--soil-brown);">la falta de datos abiertos</strong>. Tras revisar 113 estudios sobre IA aplicada a la erosión del suelo, notamos que solo 2 poseen datos de acceso abierto, y ambos se limitan a una única región y a un solo tipo de satélite.
           </p>
           <p class="text-lg leading-relaxed mt-4" style="color:var(--soil-mid); text-align:justify;" data-lang="es">
             <strong style="color:var(--soil-brown);">SoilSaveR busca cerrar esa brecha</strong>: propone un método para construir un <strong style="color:var(--soil-brown);">dataset de acceso abierto</strong> para la detección de la erosión del suelo. El dataset combina <strong style="color:var(--soil-brown);">imágenes de teledetección</strong> de varias fuentes satelitales en distintas regiones con <strong style="color:var(--soil-brown);">mapas claros</strong> que marcan exactamente dónde se produce la erosión.
@@ -907,21 +915,21 @@
             El método funciona en dos pasos.
           </p>
           <ol class="pi-steps" data-lang="es">
-            <li><span class="pi-step-mark" aria-hidden="true">1</span><p>Una serie de <strong style="color:var(--soil-brown);">modelos científicos</strong> que explican cómo el terreno y la lluvia provocan la pérdida de suelo (RUSLE e índices topográficos) <strong style="color:var(--soil-brown);">señalan automáticamente las zonas de mayor riesgo</strong>.</p></li>
+            <li><span class="pi-step-mark" aria-hidden="true">1</span><p>Una serie de <strong style="color:var(--soil-brown);">modelos científicos</strong> que explican cómo el terreno y la lluvia provocan la pérdida de suelo (<a class="rusle-link" href="https://www.ars.usda.gov/midwest-area/west-lafayette-in/national-soil-erosion-research/docs/rusle/" target="_blank" rel="noopener">RUSLE</a> e índices topográficos) <strong style="color:var(--soil-brown);">señalan automáticamente las zonas de mayor riesgo</strong>.</p></li>
             <li><span class="pi-step-mark" aria-hidden="true">2</span><p><strong style="color:var(--soil-brown);">Seres humanos</strong> revisan estas zonas en imágenes satelitales Sentinel-2 para confirmar que la erosión es realmente visible y que cada etiqueta tiene su correspondencia física.</p></li>
           </ol>
           <p class="text-lg leading-relaxed hidden" style="color:var(--soil-mid); text-align:justify;" data-lang="en">
-            Soil erosion slowly strips away the fertile land we depend on, and it drives land degradation worldwide. Artificial intelligence can help with the detection of soil erosion from satellite imagery, but progress is held back by <span class="pi-underline">one problem</span>: <strong style="color:var(--soil-brown);">hardly anyone shares their data</strong>. In a review of 113 studies on AI for soil erosion, only 2 made their data publicly available, and both were limited to a single region and a single type of satellite.
+            Soil erosion slowly strips away the fertile land we depend on, and it drives land degradation worldwide. Artificial intelligence can help with the detection of soil erosion from satellite imagery, but progress is held back by one problem: <strong style="color:var(--soil-brown);">hardly anyone shares their data</strong>. In a review of 113 studies on AI for soil erosion, only 2 made their data publicly available, and both were limited to a single region and a single type of satellite.
           </p>
           <p class="text-lg leading-relaxed mt-4 hidden" style="color:var(--soil-mid); text-align:justify;" data-lang="en">
             <strong style="color:var(--soil-brown);">SoilSaveR aims to close that gap</strong>. It proposes a method for building an <strong style="color:var(--soil-brown);">open-access dataset</strong> for soil erosion detection. The dataset combines <strong style="color:var(--soil-brown);">remote sensing images</strong> from several satellite sources across different regions, with <strong style="color:var(--soil-brown);">clear maps</strong> marking exactly where erosion occurs.
           </p>
-          <h2 class="pi-subtitle hidden" data-lang="en">How SoilSaveR works → Detecting soil erosion from satellite images</h2>
+          <h2 class="pi-subtitle hidden" data-lang="en">How SoilSaveR Works → Detecting Soil Erosion from Satellite Images</h2>
           <p class="text-lg leading-relaxed mt-4 hidden" style="color:var(--soil-mid); text-align:justify;" data-lang="en">
             The method works in two steps.
           </p>
           <ol class="pi-steps hidden" data-lang="en">
-            <li><span class="pi-step-mark" aria-hidden="true">1</span><p><strong style="color:var(--soil-brown);">Scientific models</strong> of how terrain and rainfall cause soil loss (RUSLE and topographic indices) automatically <strong style="color:var(--soil-brown);">flag the areas most at risk</strong>.</p></li>
+            <li><span class="pi-step-mark" aria-hidden="true">1</span><p><strong style="color:var(--soil-brown);">Scientific models</strong> of how terrain and rainfall cause soil loss (<a class="rusle-link" href="https://www.ars.usda.gov/midwest-area/west-lafayette-in/national-soil-erosion-research/docs/rusle/" target="_blank" rel="noopener">RUSLE</a> and topographic indices) automatically <strong style="color:var(--soil-brown);">flag the areas most at risk</strong>.</p></li>
             <li><span class="pi-step-mark" aria-hidden="true">2</span><p><strong style="color:var(--soil-brown);">Humans</strong> review these areas on Sentinel-2 satellite imagery to confirm that erosion is actually visible and that each label makes physical sense.</p></li>
           </ol>
         </div>
@@ -1098,7 +1106,7 @@
             Cómo los científicos construyen este dataset
           </h2>
           <h2 class="font-display mt-2 hidden" style="font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; color:var(--soil-dark);" data-lang="en">
-            How scientists build the dataset
+            How Scientists Build the Dataset
           </h2>
         </div>
 
@@ -1108,13 +1116,13 @@
           <div class="soil-card">
             <h3 class="font-display text-xl font-bold mb-4" style="color:var(--soil-dark);" data-lang="es">Combinación de modelos científicos con conocimiento de humanos expertos</h3>
             <p class="text-sm leading-relaxed mb-3" style="color:var(--soil-mid);" data-lang="es">Revisar a mano cada imagen satelital llevaría años, por eso SoilSaveR usa un proceso de tres pasos: las computadoras hacen el trabajo pesado y las personas hacen la revisión final.</p>
-            <h3 class="mt-card-title font-display text-xl font-bold mb-4 hidden" style="color:var(--soil-dark);" data-lang="en">Combining scientific models with human expertise</h3>
+            <h3 class="mt-card-title font-display text-xl font-bold mb-4 hidden" style="color:var(--soil-dark);" data-lang="en">Combining Scientific Models with Human Expertise</h3>
             <p class="text-sm leading-relaxed mb-3 hidden" style="color:var(--soil-mid);" data-lang="en">Reviewing every satellite image by hand would take years, so SoilSaveR uses a three-step process that lets computers do the heavy lifting and people do the final check.</p>
             <ul class="space-y-3 text-sm leading-relaxed" style="color:var(--soil-mid);">
-              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Paso 1: Estimar la probabilidad de erosión.</strong> Una serie de modelos científicos consolidados calculan qué tan vulnerable es cada zona a la pérdida de suelo (a partir del modelo RUSLE y los datos de elevación). El resultado es un mapa de «<span class="pi-underline">zonas candidatas</span>».</li>
+              <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Paso 1: Estimar la probabilidad de erosión.</strong> Una serie de modelos científicos consolidados calculan qué tan vulnerable es cada zona a la pérdida de suelo (a partir del modelo <a class="rusle-link" href="https://www.ars.usda.gov/midwest-area/west-lafayette-in/national-soil-erosion-research/docs/rusle/" target="_blank" rel="noopener">RUSLE</a> y los datos de elevación). El resultado es un mapa de «zonas candidatas».</li>
               <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Paso 2: Acotar la búsqueda.</strong> Las zonas candidatas se afinan con medidas del propio paisaje, como dónde tiende a acumularse el agua o qué tan empinado es el terreno.</li>
               <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Paso 3: Confirmación humana.</strong> Un grupo de revisores capacitados examinan solo las zonas candidatas en imágenes satelitales y marcan dónde la erosión es realmente visible.</li>
-              <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Step 1: Find likelihood of erosion.</strong> Established scientific models calculate how vulnerable each area is to soil loss (using the RUSLE model and elevation data). The result is a map of “<span class="pi-underline">candidate zones</span>”.</li>
+              <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Step 1: Find likelihood of erosion.</strong> Established scientific models calculate how vulnerable each area is to soil loss (using the <a class="rusle-link" href="https://www.ars.usda.gov/midwest-area/west-lafayette-in/national-soil-erosion-research/docs/rusle/" target="_blank" rel="noopener">RUSLE</a> model and elevation data). The result is a map of “candidate zones”.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Step 2: Narrow down the search.</strong> The candidate zones are refined using measures of the landscape itself like where water tends to collect or how steep the ground is.</li>
               <li class="hidden" data-lang="en">▸ <strong style="color:var(--soil-brown);">Step 3: Human confirmation.</strong> Trained reviewers examine only the candidate zones on satellite images and mark where erosion is actually visible.</li>
             </ul>
@@ -1123,7 +1131,7 @@
           <!-- Technology -->
           <div class="soil-card">
             <h3 class="font-display text-xl font-bold mb-4" style="color:var(--soil-dark);" data-lang="es">Las herramientas de SoilSaveR</h3>
-            <h3 class="font-display text-xl font-bold mb-4 hidden" style="color:var(--soil-dark);" data-lang="en">The tools behind SoilSaveR</h3>
+            <h3 class="font-display text-xl font-bold mb-4 hidden" style="color:var(--soil-dark);" data-lang="en">The Tools Behind SoilSaveR</h3>
             <ul class="space-y-3 text-sm leading-relaxed" style="color:var(--soil-mid);">
               <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Imágenes satelitales (Sentinel-2)</strong>: las imágenes que usan los revisores para marcar la erosión. Cada píxel cubre un área de 10 × 10 metros de terreno, y el satélite capta tipos de luz que el ojo humano no puede ver, lo que ayuda a revelar diferencias en el suelo y la vegetación.</li>
               <li data-lang="es">▸ <strong style="color:var(--soil-brown);">Mapas de elevación (ALOS PALSAR)</strong>: un mapa 3D detallado del terreno. Muestra la forma del paisaje (pendientes, valles y crestas) y alimenta los modelos científicos que predicen dónde es probable la erosión.</li>
@@ -1143,13 +1151,13 @@
           <h3 class="font-display text-2xl font-bold mb-4 hidden" style="color:var(--soil-cream);" data-lang="en">Why SoilSaveR matters</h3>
           <ul class="leading-relaxed" style="color:var(--soil-sand); list-style:disc; padding-left:1.25rem; margin:0; text-align:left;" data-lang="es">
             <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">La investigación actual llevada a cabo con IA sobre erosión no se puede verificar ni ampliar.</strong> Casi todos los modelos de IA publicados cuyo fin es detectar la erosión del suelo se entrenaron con datos que no son públicos. Sin acceso a esos datos, otros científicos no pueden verificar los resultados ni mejorarlos.</li>
-            <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">El método más común predice el riesgo, no la realidad.</strong> El enfoque más utilizado, el modelo RUSLE, estima dónde es probable que ocurra la erosión, pero no muestra dónde ocurrió realmente. Además, sus estimaciones pueden estar muy lejos de la realidad: solo el 41% de los estudios contrastan estas predicciones con datos reales.</li>
+            <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">El método más común predice el riesgo, no la realidad.</strong> El enfoque más utilizado, el modelo <a class="rusle-link" href="https://www.ars.usda.gov/midwest-area/west-lafayette-in/national-soil-erosion-research/docs/rusle/" target="_blank" rel="noopener">RUSLE</a>, estima dónde es probable que ocurra la erosión, pero no muestra dónde ocurrió realmente. Además, sus estimaciones pueden estar muy lejos de la realidad: solo el 41% de los estudios contrastan estas predicciones con datos reales.</li>
             <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">La IA necesita ejemplos reales para aprender.</strong> Para enseñarle a un modelo de IA a reconocer características de la erosión, hacen falta ejemplos en los que dicha erosión haya sido confirmada visualmente, no solo predicha por una fórmula.</li>
             <li><strong style="color:var(--soil-cream);">SoilSaveR cierra esta brecha.</strong> Al combinar múltiples fuentes de datos con verificación humana, SoilSaveR ofrece una base abierta para entrenar modelos de IA que detecten erosión en imágenes satelitales. A su vez, permite compararlos de manera justa, con los mismos datos, <strong style="color:var(--soil-cream);">para que cualquiera pueda reproducir los resultados</strong>.</li>
           </ul>
           <ul class="leading-relaxed hidden" style="color:var(--soil-sand); list-style:disc; padding-left:1.25rem; margin:0; text-align:left;" data-lang="en">
             <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">Current AI research on erosion can’t be checked or built upon.</strong> Almost all published AI models for soil erosion detection were trained on data that isn’t publicly available. Without access to the data, other scientists can’t verify the results or improve on them.</li>
-            <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">The most common method predicts risk, not reality.</strong> The most widely used approach, the RUSLE model, estimates where erosion is likely to happen, but it doesn’t show where erosion has actually occurred. Its estimates can also be far off as only 41% of studies check these predictions against real-world data.</li>
+            <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">The most common method predicts risk, not reality.</strong> The most widely used approach, the <a class="rusle-link" href="https://www.ars.usda.gov/midwest-area/west-lafayette-in/national-soil-erosion-research/docs/rusle/" target="_blank" rel="noopener">RUSLE</a> model, estimates where erosion is likely to happen, but it doesn’t show where erosion has actually occurred. Its estimates can also be far off as only 41% of studies check these predictions against real-world data.</li>
             <li style="margin-bottom:0.75rem;"><strong style="color:var(--soil-cream);">AI needs real examples to learn from.</strong> To teach an AI model to recognize erosion features, it needs examples where erosion has been visually confirmed, not just predicted by a formula.</li>
             <li><strong style="color:var(--soil-cream);">SoilSaveR fills this gap.</strong> By combining multiple data sources with human verification, SoilSaveR provides an open foundation for training AI models to detect erosion in satellite images, and for comparing them fairly, on the same data, <strong style="color:var(--soil-cream);">so anyone can reproduce the results</strong>.</li>
           </ul>
@@ -1261,8 +1269,8 @@
                 <h3 class="rg-name">Sandupal Dutta</h3>
                 <div class="rg-logos"><a href="https://www.jhu.edu/" target="_blank" rel="noopener" class="rg-uni-link" aria-label="Johns Hopkins University"><img class="rg-uni round jhu" src="../../assets/partners/johns_hopkins.webp" alt="Johns Hopkins University" title="Johns Hopkins University"></a><a href="https://www.linkedin.com/in/sandupal-d-552a30105/" target="_blank" rel="noopener" aria-label="LinkedIn" class="rg-link inline-flex"><svg class="rg-li" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="4" fill="none" stroke="currentColor"/><path fill="currentColor" d="M7.1 9.4H4.6V19h2.5V9.4zM5.85 5.2a1.45 1.45 0 100 2.9 1.45 1.45 0 000-2.9zM19.4 13.6c0-2.6-.55-4.4-3.5-4.4-1.42 0-2.37.78-2.76 1.52h-.04V9.4h-2.4V19h2.5v-4.75c0-1.25.24-2.47 1.79-2.47 1.53 0 1.55 1.43 1.55 2.55V19h2.5z"/></svg></a></div>
               </div>
-              <p class="rg-role" data-lang="es">Investigador</p>
-              <p class="rg-role hidden" data-lang="en">Researcher</p>
+              <p class="rg-role" data-lang="es">Investigador Doctoral</p>
+              <p class="rg-role hidden" data-lang="en">PhD Researcher</p>
               <p class="rg-bio" data-lang="es">Investigador doctoral (Graduate Fellow) en la Universidad Johns Hopkins y ex oficial de la Armada de la India. Científico de datos ambientales especializado en meteorología, oceanografía, modelización numérica y aprendizaje automático. Formó parte del equipo SoilSentinel en el reto NASA Space-to-Soil.</p>
               <p class="rg-bio hidden" data-lang="en">Doctoral researcher (Graduate Fellow) at Johns Hopkins University and a former Indian Navy officer. An environmental data scientist specialized in meteorology, oceanography, numerical modeling and machine learning. He was part of the SoilSentinel team for the NASA Space-to-Soil Challenge.</p>
             </div>
@@ -1411,6 +1419,59 @@
   </footer>
 
   <!-- ── SCRIPTS ────────────────────────────────────────── -->
+
+  <!-- RUSLE explainer, positioned next to whichever RUSLE link is hovered -->
+  <div id="rusle-tip" role="tooltip">
+    <div data-lang="es">
+      <p>La Ecuación Universal Revisada de Pérdida de Suelo (RUSLE) se ocupa específicamente de la erosión hídrica, es decir, del suelo que arrastran la lluvia y el agua que escurre por la superficie.</p>
+      <p class="rt-formula">La fórmula → A = R × K × LS × C × P</p>
+      <ul>
+        <li><b>A: pérdida de suelo.</b> La cantidad promedio de suelo perdido por erosión.</li>
+        <li><b>R: erosividad de la lluvia.</b> La capacidad de la lluvia para provocar erosión.</li>
+        <li><b>K: erodabilidad del suelo.</b> Qué tan fácilmente se desprende el suelo y se arrastra.</li>
+        <li><b>L: longitud de la pendiente.</b> Cuanto más larga es la pendiente, más agua se acumula y más rápido corre cuesta abajo.</li>
+        <li><b>S: inclinación de la pendiente.</b> Cuanto más empinado es el terreno, mayor es la erosión.</li>
+        <li><b>C: cobertura y manejo.</b> El efecto protector de la vegetación, los cultivos y sus residuos.</li>
+        <li><b>P: prácticas de conservación.</b> Medidas como el cultivo en curvas de nivel o en franjas.</li>
+      </ul>
+    </div>
+    <div class="hidden" data-lang="en">
+      <p>The Revised Universal Soil Loss Equation (RUSLE) deals specifically with water erosion, meaning the soil carried away by rainfall and by water running over the surface.</p>
+      <p class="rt-formula">The formula → A = R × K × LS × C × P</p>
+      <ul>
+        <li><b>A: soil loss.</b> The average amount of soil lost to erosion.</li>
+        <li><b>R: rainfall erosivity.</b> Rain’s capacity to cause erosion.</li>
+        <li><b>K: soil erodibility.</b> How easily a given soil is detached and transported.</li>
+        <li><b>L: slope length.</b> The longer the slope, the more water accumulates and the faster it flows downhill.</li>
+        <li><b>S: slope steepness.</b> The steeper the terrain, the greater the erosion.</li>
+        <li><b>C: cover and management.</b> The protective effect of vegetation, crops, and crop residues.</li>
+        <li><b>P: support practices.</b> Conservation measures such as contour farming or strip cropping.</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var tip = document.getElementById('rusle-tip');
+      if (!tip) return;
+      function place(link) {
+        var r = link.getBoundingClientRect(), t = tip.getBoundingClientRect(), gap = 10;
+        var top = r.top - t.height - gap;
+        if (top < 12) top = r.bottom + gap;            // not enough room above: show below
+        var left = r.left + r.width / 2 - t.width / 2;
+        left = Math.max(16, Math.min(left, window.innerWidth - t.width - 16));
+        // absolute (the page's <body> carries a transform, so fixed would not be viewport-relative)
+        tip.style.top = (top + window.scrollY) + 'px'; tip.style.left = (left + window.scrollX) + 'px';
+      }
+      function show(e) { place(e.currentTarget); tip.classList.add('show'); }
+      function hide() { tip.classList.remove('show'); }
+      document.querySelectorAll('.rusle-link').forEach(function (a) {
+        a.setAttribute('aria-describedby', 'rusle-tip');
+        a.addEventListener('mouseenter', show); a.addEventListener('focus', show);
+        a.addEventListener('mouseleave', hide); a.addEventListener('blur', hide);
+      });
+      window.addEventListener('scroll', hide, { passive: true });
+    })();
+  </script>
   <script src="../../lang.js"></script>
 
   <script>
