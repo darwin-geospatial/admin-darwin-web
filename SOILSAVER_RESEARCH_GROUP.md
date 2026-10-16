@@ -16,7 +16,9 @@ never conflate SoilSaveR with SoilSentinel).
 
 1. **Research collaborators removed from the homepage** (`index.html`). The two
    collaborator cards (Víctor Tenorio, Sandupal Dutta) no longer live on the home
-   team section.
+   team section. Exception (2026-10): Sandupal Dutta is back on the homepage core
+   team as **Applied AI Researcher** for visibility (approved by Gabriel); he
+   stays on the SoilSaveR page as Researcher too.
 2. **SoilSaveR page reworked into a research group** — `projects/soil_saver/index.html`.
    The existing content (stats columns, scrollytelling, methodology) is kept; a
    **Research Group** section (`#research-group`) was added.
